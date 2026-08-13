@@ -1,0 +1,289 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>About Us | Ruptech Engineers</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#dfe3e1",
+                        "tertiary-fixed": "#ffdbd1",
+                        "on-tertiary-fixed": "#3b0900",
+                        "on-tertiary-fixed-variant": "#743320",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#0e7c6b",
+                        "secondary": "#325f9b",
+                        "inverse-surface": "#2d3130",
+                        "surface-container-high": "#e5e9e6",
+                        "outline": "#6e7a76",
+                        "surface-container-low": "#f0f5f2",
+                        "inverse-primary": "#7bd7c3",
+                        "on-secondary-fixed-variant": "#124782",
+                        "primary-fixed": "#98f3de",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#ffeeea",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#00201a",
+                        "tertiary-container": "#a55943",
+                        "surface-container": "#ebefec",
+                        "surface-bright": "#f6faf7",
+                        "surface-tint": "#006b5c",
+                        "surface": "#f6faf7",
+                        "on-secondary-container": "#194b86",
+                        "secondary-fixed": "#d5e3ff",
+                        "primary-fixed-dim": "#7bd7c3",
+                        "tertiary": "#87422d",
+                        "on-secondary": "#ffffff",
+                        "background": "#f6faf7",
+                        "primary": "#006153",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#181d1b",
+                        "secondary-fixed-dim": "#a7c8ff",
+                        "on-background": "#181d1b",
+                        "surface-container-highest": "#dfe3e1",
+                        "inverse-on-surface": "#eef2ef",
+                        "surface-dim": "#d7dbd8",
+                        "outline-variant": "#bdc9c5",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb5a0",
+                        "on-surface-variant": "#3e4946",
+                        "on-primary-container": "#bdffee",
+                        "secondary-container": "#93bdff",
+                        "on-primary-fixed-variant": "#005145",
+                        "on-secondary-fixed": "#001c3b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "lg": "48px",
+                        "container-max": "1280px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "xl": "80px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "mono-label": ["JetBrains Mono"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-sm": ["18px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "mono-label": ["13px", { "lineHeight": "1", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(225, 228, 228, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col antialiased">
+<!-- Top Navigation -->
+<header class="bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline docked full-width top-0 sticky z-50">
+<div class="max-w-container-max mx-auto px-gutter flex justify-between items-center h-xl">
+<!-- Brand -->
+<a class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary-fixed flex items-center gap-xs" href="#"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkPjBxBT4C2Xluq6aEgujFR3W1VDo_0mi6fmir8G4c43041crgBm_-Zf6qOjSMsFzRWW6sOPll-GpzQyE85Ytndy0p73OG3Etg7Zx9F5DpPMlFXqr8JK3m9sRk-Sqb4EBUWS6BCl4lLf1yAOxM5yfoNVSEG_bvCY361_XFGyMCOUBCC76SQKR811qZ3HK8EPsuJoS0nB1tKABgfq-AOKiaym4ty_r6CKCjCxq6BuORdzw83ALXC5c8" alt="Ruptech Engineers Logo" class="h-[40px] w-auto object-contain"></a>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex items-center gap-md font-label-caps text-label-caps">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Home</a>
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 opacity-80 transition-opacity" href="#">About</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Products</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Manufacturing</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Certifications</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors" href="#">Contact</a>
+</nav>
+<!-- Actions -->
+<div class="hidden md:flex items-center gap-sm font-label-caps text-label-caps">
+<button class="px-md py-sm border border-secondary text-secondary rounded hover:bg-surface-container transition-colors">WhatsApp</button>
+<button class="px-md py-sm bg-primary-container text-white rounded hover:bg-primary transition-colors flex items-center gap-xs">
+<span class="material-symbols-outlined text-[16px]">call</span>
+                    Call Now
+                </button>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow">
+<!-- Hero Banner -->
+<section class="relative w-full h-[400px] flex items-center justify-center bg-surface-container-high overflow-hidden border-b border-outline-variant">
+<div class="absolute inset-0 z-0" data-alt="A wide angle, high-resolution photograph of a modern, clean industrial manufacturing facility. The scene shows rows of precision CNC machines and automated assembly lines in the background, slightly out of focus to serve as a backdrop. The lighting is cool, bright, and professional, emphasizing the sterile and highly organized environment. The color palette is dominated by pristine whites, metallic silvers, and deep navy blues, with subtle teal accents, conveying a sense of advanced engineering and corporate reliability." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAeHzDvtpr98IjvlV_P23laAnHeC7gtD5QLTFJpl9-irPC0scZa4REx2NnpCpNHiKdzsI_WzfKOg7kad959japaRIYCQOJVEbENb_IGuB7h5n4VPQQ061ZUipW8qA7uCyKQADxQSq7ecpNZo2roLZLzB5Vx-TzgGliIPuquTXJfgCu-kNCZF3guCnlVhw9JyVAa7qGKd-Kb1W1cyMWjhJslsLHl9aTUqMC7zfL3VY8p2i7MkFySaUlA')"></div>
+<div class="absolute inset-0 bg-surface/80 dark:bg-inverse-surface/90 backdrop-blur-sm z-10"></div>
+<div class="relative z-20 text-center max-w-3xl px-gutter">
+<span class="font-label-caps text-label-caps text-primary tracking-widest uppercase mb-sm block">Corporate Overview</span>
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-md">About Ruptech Engineers</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Engineering excellence and precision manufacturing for the modern industrial sector.</p>
+</div>
+</section>
+<!-- Company Story & Image -->
+<section class="max-w-container-max mx-auto px-gutter py-xl">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg items-center">
+<div class="space-y-md">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Our Legacy of Precision</h2>
+<div class="w-16 h-1 bg-primary mb-md"></div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        Founded with a vision to deliver unparalleled engineering solutions, Ruptech Engineers has established itself as a cornerstone of reliability in the industrial manufacturing landscape. Our journey began with a commitment to stringent quality standards and a relentless pursuit of technological advancement.
+                    </p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        Today, we operate state-of-sart facilities equipped to handle complex fabrication, precision machining, and comprehensive assembly processes. We pride ourselves on our ability to translate intricate technical requirements into robust, high-performance mechanical systems that power industries worldwide.
+                    </p>
+</div>
+<div class="relative h-[500px] rounded border border-outline-variant overflow-hidden group p-2 bg-surface-container-lowest">
+<div class="absolute inset-0 bg-surface-container animate-pulse z-0 rounded"></div>
+<img class="relative z-10 w-full h-full object-cover rounded transition-transform duration-700 group-hover:scale-105" data-alt="A professional, medium shot photograph of a team of three engineers standing confidently inside a well-lit, modern factory setting. The central figure is reviewing a technical blueprint on a tablet, while the others look on engaged. They are wearing professional corporate-industrial attire: crisp white shirts, dark navy slacks, and teal hard hats. The background features heavy-duty metallic machinery, sharply in focus but secondary to the team. The lighting is crisp and even, highlighting their professionalism and the clean, organized nature of the engineering facility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiIg1cPRTHPa1tL3FEw5HV31s_-8VsdrDRobhxWpBrlXd_Y-JvsYa0gA2l1wOXsHoIBA6FjvNUZx64O9Mfq1v9_Vn7itU42LUUcqkXxUSrp5PFSWr9NRtdr0uaG-5SvfJz2L2bZMxOOZ8p00q27agTCShZO6-Lj5NBy90vbp9doT-4wfjLsch2D2a8pQhHXDmfo9ejJCHlBYoRjTIKp3PQI9cmkzfFkc2oUVQqA4CrnIdsaEidmEWm">
+<!-- Floating Data Card -->
+<div class="absolute bottom-lg right-lg z-20 glass-panel p-md rounded shadow-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[32px]">verified</span>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Quality Standard</p>
+<p class="font-headline-sm text-headline-sm text-on-surface font-bold">ISO 9001:2015</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Key Facts / Technical Specs Bento -->
+<section class="bg-surface-container-low py-xl border-y border-outline-variant">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-lg">
+<h2 class="font-headline-md text-headline-md text-on-surface">Operational Scale</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-xs">Key metrics defining our infrastructure capacity</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-md">
+<!-- Fact Card 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-md flex flex-col justify-between hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-primary mb-md">calendar_month</span>
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-xs">Year Established</div>
+<div class="font-mono-label text-mono-label text-on-surface text-lg">1998</div>
+</div>
+<!-- Fact Card 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-md flex flex-col justify-between hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-primary mb-md">domain</span>
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-xs">Land / Building Area</div>
+<div class="font-mono-label text-mono-label text-on-surface text-lg">45,000 Sq. Ft.</div>
+</div>
+<!-- Fact Card 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-md flex flex-col justify-between hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-primary mb-md">account_balance</span>
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-xs">Capital Investment</div>
+<div class="font-mono-label text-mono-label text-on-surface text-lg">$5.2 Million USD</div>
+</div>
+<!-- Fact Card 4 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded p-md flex flex-col justify-between hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-primary mb-md">monitoring</span>
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-xs">Annual Sales</div>
+<div class="font-mono-label text-mono-label text-on-surface text-lg">$12.5 Million USD</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us / Value Proposition -->
+<section class="max-w-container-max mx-auto px-gutter py-xl">
+<div class="mb-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Why Choose Ruptech</h2>
+<div class="w-16 h-1 bg-primary mt-sm"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Value 1 -->
+<div class="border border-outline-variant rounded p-lg bg-surface-container-lowest group hover:shadow-sm transition-shadow">
+<div class="w-12 h-12 bg-surface-container rounded flex items-center justify-center mb-md group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-white transition-colors">engineering</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-sm">Uncompromising Quality Control</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Our rigorous multi-stage inspection process ensures that every component leaving our facility meets exact tolerances. We utilize advanced CMM and optical measurement systems to guarantee structural and dimensional integrity for critical industrial applications.</p>
+</div>
+<!-- Value 2 -->
+<div class="border border-outline-variant rounded p-lg bg-surface-container-lowest group hover:shadow-sm transition-shadow">
+<div class="w-12 h-12 bg-surface-container rounded flex items-center justify-center mb-md group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-white transition-colors">architecture</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-sm">Advanced Manufacturing Capabilities</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Equipped with the latest 5-axis CNC machining centers and automated fabrication lines, we possess the technical infrastructure to execute high-complexity projects efficiently, scaling seamlessly from rapid prototyping to full-volume production runs.</p>
+</div>
+<!-- Value 3 -->
+<div class="border border-outline-variant rounded p-lg bg-surface-container-lowest group hover:shadow-sm transition-shadow">
+<div class="w-12 h-12 bg-surface-container rounded flex items-center justify-center mb-md group-hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-white transition-colors">handshake</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-sm">Client-Centric Engineering Support</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">We act as an extension of your engineering team. Our dedicated project managers and design engineers collaborate closely with clients to optimize designs for manufacturability (DFM), driving down costs while improving final product reliability and performance.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-inverse-surface dark:bg-surface-container-lowest full-width">
+<div class="max-w-container-max mx-auto px-gutter py-xl grid grid-cols-1 md:grid-cols-4 gap-md border-b border-outline/30">
+<!-- Brand Column -->
+<div class="col-span-1 md:col-span-2 space-y-md">
+<a class="font-headline-sm text-headline-sm font-bold text-primary-fixed dark:text-primary flex items-center gap-xs" href="#"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkPjBxBT4C2Xluq6aEgujFR3W1VDo_0mi6fmir8G4c43041crgBm_-Zf6qOjSMsFzRWW6sOPll-GpzQyE85Ytndy0p73OG3Etg7Zx9F5DpPMlFXqr8JK3m9sRk-Sqb4EBUWS6BCl4lLf1yAOxM5yfoNVSEG_bvCY361_XFGyMCOUBCC76SQKR811qZ3HK8EPsuJoS0nB1tKABgfq-AOKiaym4ty_r6CKCjCxq6BuORdzw83ALXC5c8" alt="Ruptech Engineers Logo" class="h-[40px] w-auto object-contain"></a>
+<p class="font-body-sm text-body-sm text-surface-variant dark:text-on-surface-variant max-w-sm">
+                    Delivering robust engineering solutions and precision manufacturing for the global industrial sector.
+                </p>
+</div>
+<!-- Links Column -->
+<div>
+<h4 class="font-label-caps text-label-caps text-surface-variant dark:text-on-surface-variant mb-sm">Navigation</h4>
+<nav class="flex flex-col gap-sm font-body-sm text-body-sm">
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-white dark:hover:text-black transition-colors" href="#">Home</a>
+<a class="text-primary-fixed dark:text-primary underline" href="#">About Us</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-white dark:hover:text-black transition-colors" href="#">Products</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-white dark:hover:text-black transition-colors" href="#">Manufacturing</a>
+</nav>
+</div>
+<!-- Legal Column -->
+<div>
+<h4 class="font-label-caps text-label-caps text-surface-variant dark:text-on-surface-variant mb-sm">Legal</h4>
+<nav class="flex flex-col gap-sm font-body-sm text-body-sm">
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-white dark:hover:text-black transition-colors" href="#">Certifications</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-white dark:hover:text-black transition-colors" href="#">Gallery</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-white dark:hover:text-black transition-colors" href="#">Contact Us</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-white dark:hover:text-black transition-colors" href="#">Privacy Policy</a>
+</nav>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter py-md flex flex-col md:flex-row justify-between items-center font-body-sm text-body-sm text-surface-variant dark:text-on-surface-variant">
+<p class="">© 2024 Ruptech Engineers Pvt. Ltd. All Rights Reserved. GSTIN: [Placeholder]</p>
+</div>
+</footer>
+
+
+</body></html>

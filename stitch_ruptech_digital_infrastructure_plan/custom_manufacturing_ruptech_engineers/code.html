@@ -1,0 +1,335 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Custom &amp; OEM Manufacturing - Ruptech Engineers</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#ebefec",
+                        "surface-container-high": "#e5e9e6",
+                        "on-background": "#181d1b",
+                        "on-secondary-fixed": "#001c3b",
+                        "secondary-fixed-dim": "#a7c8ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#0e7c6b",
+                        "on-surface-variant": "#3e4946",
+                        "on-tertiary-fixed-variant": "#743320",
+                        "tertiary": "#87422d",
+                        "on-error": "#ffffff",
+                        "background": "#f6faf7",
+                        "on-secondary-container": "#194b86",
+                        "secondary-container": "#93bdff",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#d5e3ff",
+                        "tertiary-container": "#a55943",
+                        "on-primary-container": "#bdffee",
+                        "on-surface": "#181d1b",
+                        "primary-fixed-dim": "#7bd7c3",
+                        "surface-tint": "#006b5c",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#7bd7c3",
+                        "surface-variant": "#dfe3e1",
+                        "outline": "#6e7a76",
+                        "surface-bright": "#f6faf7",
+                        "inverse-on-surface": "#eef2ef",
+                        "on-primary-fixed-variant": "#005145",
+                        "error": "#ba1a1a",
+                        "surface": "#f6faf7",
+                        "primary": "#006153",
+                        "primary-fixed": "#98f3de",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#00201a",
+                        "tertiary-fixed": "#ffdbd1",
+                        "surface-container-low": "#f0f5f2",
+                        "surface-container-highest": "#dfe3e1",
+                        "tertiary-fixed-dim": "#ffb5a0",
+                        "outline-variant": "#bdc9c5",
+                        "on-secondary-fixed-variant": "#124782",
+                        "on-tertiary-fixed": "#3b0900",
+                        "inverse-surface": "#2d3130",
+                        "on-tertiary-container": "#ffeeea",
+                        "surface-dim": "#d7dbd8",
+                        "secondary": "#325f9b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "gutter": "24px",
+                        "lg": "48px",
+                        "xs": "4px",
+                        "xl": "80px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"],
+                        "mono-label": ["JetBrains Mono"],
+                        "headline-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "mono-label": ["13px", { "lineHeight": "1", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-sm": ["18px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-inverse-surface border-b border-outline-variant dark:border-outline docked full-width top-0 sticky z-50">
+<div class="max-w-container-max mx-auto px-gutter flex justify-between items-center h-xl">
+<a href="#" class="block h-10"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkPjBxBT4C2Xluq6aEgujFR3W1VDo_0mi6fmir8G4c43041crgBm_-Zf6qOjSMsFzRWW6sOPll-GpzQyE85Ytndy0p73OG3Etg7Zx9F5DpPMlFXqr8JK3m9sRk-Sqb4EBUWS6BCl4lLf1yAOxM5yfoNVSEG_bvCY361_XFGyMCOUBCC76SQKR811qZ3HK8EPsuJoS0nB1tKABgfq-AOKiaym4ty_r6CKCjCxq6BuORdzw83ALXC5c8" alt="Ruptech Engineers Logo" class="h-full w-auto object-contain"></a>
+<nav class="hidden md:flex gap-gutter items-center h-full">
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors flex items-center h-full" href="#">Home</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors flex items-center h-full" href="#">About</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors flex items-center h-full" href="#">Products</a>
+<a class="font-label-caps text-label-caps text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 h-full flex items-center mt-1" href="#">Manufacturing</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors flex items-center h-full" href="#">Certifications</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors flex items-center h-full" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-sm">
+<button class="hidden md:flex items-center gap-xs px-md py-sm bg-primary-container text-on-primary-container font-label-caps text-label-caps rounded transition-colors hover:brightness-90">
+<span class="material-symbols-outlined text-[16px]">call</span>
+                    Call Now
+                </button>
+<button class="hidden md:flex items-center gap-xs px-md py-sm border border-outline text-on-surface font-label-caps text-label-caps rounded transition-colors hover:bg-surface-variant">
+<span class="material-symbols-outlined text-[16px]">chat</span>
+                    WhatsApp
+                </button>
+<button class="md:hidden text-on-surface p-sm">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<!-- Header Banner -->
+<section class="relative bg-inverse-surface text-surface-container-lowest py-xl md:py-[120px] overflow-hidden">
+<div class="absolute inset-0 opacity-20 pointer-events-none" data-alt="A highly detailed, industrial manufacturing environment. Large-scale precision CNC machinery operating in a clean, modern facility. High-contrast lighting with cool blue and teal industrial tones emphasizing engineered metal components. A sense of heavy-duty reliability and modern corporate engineering excellence. B2B technical aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDjyNUuuMadNNn6iZ7sv5t_G72oCKD3494JHp8dyg7Y8ZbAVTYzIXavfmN0F6sYgDoHlUIw6CZD29cBeewBdjSIxsXTPgQ8BfjvRGJlmzn39BAzBgaBI_tURsEo4MGGq47HbITOlUMD6MivoOL1ESN2iHhvDzBmtda0hvesSJkvVQdt8EnAr7IyaHB00_8oDsJdya-T-bmP6ZfDBOyypdm0Cpuvws5nTjIHPM7J1rGkpNjY6xNKRjV6')"></div>
+<div class="relative max-w-container-max mx-auto px-gutter z-10 flex flex-col md:flex-row gap-lg items-center">
+<div class="flex-1 max-w-3xl">
+<div class="inline-flex items-center gap-xs px-sm py-xs border border-outline-variant rounded-sm mb-md bg-surface-container/10 backdrop-blur-sm">
+<span class="w-2 h-2 rounded-full bg-primary-fixed"></span>
+<span class="font-mono-label text-mono-label text-primary-fixed">ENGINEERING EXCELLENCE</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl mb-md text-surface-container-lowest">Custom &amp; OEM Manufacturing</h1>
+<p class="font-body-lg text-body-lg text-surface-variant max-w-2xl">Precision engineered solutions tailored to your specific industrial requirements. From initial design to full-scale batch production, delivering heavy-duty reliability.</p>
+</div>
+</div>
+</section>
+<!-- Capabilities Bento Grid -->
+<section class="py-xl bg-background border-b border-outline-variant">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="mb-lg">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-sm">Core Capabilities</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">Comprehensive manufacturing services to bring your technical specifications to reality.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
+<!-- Capability 1 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md hover:shadow-[0_2px_4px_rgba(0,0,0,0.05)] transition-shadow">
+<div class="w-12 h-12 rounded bg-surface-container-low flex items-center justify-center mb-md border border-outline-variant">
+<span class="material-symbols-outlined text-primary text-[24px]">architecture</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">Design Engineering</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Translating concepts into manufacturable CAD models ensuring structural integrity.</p>
+</div>
+<!-- Capability 2 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md hover:shadow-[0_2px_4px_rgba(0,0,0,0.05)] transition-shadow">
+<div class="w-12 h-12 rounded bg-surface-container-low flex items-center justify-center mb-md border border-outline-variant">
+<span class="material-symbols-outlined text-primary text-[24px]">precision_manufacturing</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">Rapid Prototyping</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Quick-turnaround physical models to validate design and technical specifications.</p>
+</div>
+<!-- Capability 3 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md hover:shadow-[0_2px_4px_rgba(0,0,0,0.05)] transition-shadow">
+<div class="w-12 h-12 rounded bg-surface-container-low flex items-center justify-center mb-md border border-outline-variant">
+<span class="material-symbols-outlined text-primary text-[24px]">conveyor_belt</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">OEM Services</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Dedicated production lines for Original Equipment Manufacturer components.</p>
+</div>
+<!-- Capability 4 -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md hover:shadow-[0_2px_4px_rgba(0,0,0,0.05)] transition-shadow">
+<div class="w-12 h-12 rounded bg-surface-container-low flex items-center justify-center mb-md border border-outline-variant">
+<span class="material-symbols-outlined text-primary text-[24px]">inventory_2</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs">Batch Production</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Scalable manufacturing from small test batches to high-volume continuous production.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Process Timeline -->
+<section class="py-xl bg-surface">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="mb-lg flex justify-between items-end border-b border-outline-variant pb-md">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-sm">OEM/ODM Process</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-3xl">Our standardized workflow ensures strict adherence to technical specifications and delivery timelines.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-md gap-y-lg relative">
+<!-- Step 1 -->
+<div class="relative pl-lg border-l border-outline-variant lg:border-l-0 lg:border-t lg:pl-0 lg:pt-lg">
+<div class="absolute left-[-12px] top-0 lg:top-[-12px] lg:left-0 w-6 h-6 rounded-full bg-surface-container-lowest border-2 border-primary flex items-center justify-center">
+<span class="font-mono-label text-[10px] text-primary">01</span>
+</div>
+<div class="mb-sm flex items-center gap-sm">
+<span class="material-symbols-outlined text-outline">draft</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Drawing Submission</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Submit CAD files or detailed technical drawings for initial assessment.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative pl-lg border-l border-outline-variant lg:border-l-0 lg:border-t lg:pl-0 lg:pt-lg">
+<div class="absolute left-[-12px] top-0 lg:top-[-12px] lg:left-0 w-6 h-6 rounded-full bg-surface-container-lowest border-2 border-primary flex items-center justify-center">
+<span class="font-mono-label text-[10px] text-primary">02</span>
+</div>
+<div class="mb-sm flex items-center gap-sm">
+<span class="material-symbols-outlined text-outline">fact_check</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Technical Review</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Engineering team validates feasibility and suggests structural optimizations.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative pl-lg border-l border-outline-variant lg:border-l-0 lg:border-t lg:pl-0 lg:pt-lg">
+<div class="absolute left-[-12px] top-0 lg:top-[-12px] lg:left-0 w-6 h-6 rounded-full bg-surface-container-lowest border-2 border-primary flex items-center justify-center">
+<span class="font-mono-label text-[10px] text-primary">03</span>
+</div>
+<div class="mb-sm flex items-center gap-sm">
+<span class="material-symbols-outlined text-outline">request_quote</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Quotation</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Detailed breakdown of material costs, tooling, and production timelines.</p>
+</div>
+<!-- Step 4 -->
+<div class="relative pl-lg border-l border-outline-variant lg:border-l-0 lg:border-t lg:pl-0 lg:pt-lg">
+<div class="absolute left-[-12px] top-0 lg:top-[-12px] lg:left-0 w-6 h-6 rounded-full bg-surface-container-lowest border-2 border-primary flex items-center justify-center">
+<span class="font-mono-label text-[10px] text-primary">04</span>
+</div>
+<div class="mb-sm flex items-center gap-sm">
+<span class="material-symbols-outlined text-outline">save_as</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Prototype</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Fabrication of initial samples for client approval and physical testing.</p>
+</div>
+<!-- Step 5 -->
+<div class="relative pl-lg border-l border-outline-variant lg:border-l-0 lg:border-t lg:pl-0 lg:pt-lg">
+<div class="absolute left-[-12px] top-0 lg:top-[-12px] lg:left-0 w-6 h-6 rounded-full bg-surface-container-lowest border-2 border-primary flex items-center justify-center">
+<span class="font-mono-label text-[10px] text-primary">05</span>
+</div>
+<div class="mb-sm flex items-center gap-sm">
+<span class="material-symbols-outlined text-outline">factory</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Batch Production</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Full-scale manufacturing initiating upon final prototype sign-off.</p>
+</div>
+<!-- Step 6 -->
+<div class="relative pl-lg border-l border-outline-variant lg:border-l-0 lg:border-t lg:pl-0 lg:pt-lg">
+<div class="absolute left-[-12px] top-0 lg:top-[-12px] lg:left-0 w-6 h-6 rounded-full bg-surface-container-lowest border-2 border-primary flex items-center justify-center">
+<span class="font-mono-label text-[10px] text-primary">06</span>
+</div>
+<div class="mb-sm flex items-center gap-sm">
+<span class="material-symbols-outlined text-outline">format_paint</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Finishing</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Application of industrial coatings, treatments, and surface finalization.</p>
+</div>
+<!-- Step 7 -->
+<div class="relative pl-lg border-l border-outline-variant lg:border-l-0 lg:border-t lg:pl-0 lg:pt-lg">
+<div class="absolute left-[-12px] top-0 lg:top-[-12px] lg:left-0 w-6 h-6 rounded-full bg-surface-container-lowest border-2 border-primary flex items-center justify-center">
+<span class="font-mono-label text-[10px] text-primary">07</span>
+</div>
+<div class="mb-sm flex items-center gap-sm">
+<span class="material-symbols-outlined text-outline">policy</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Quality Control</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Rigorous inspection against defined tolerances and technical specifications.</p>
+</div>
+<!-- Step 8 -->
+<div class="relative pl-lg border-l-0 lg:border-t lg:pl-0 lg:pt-lg">
+<div class="absolute left-[-12px] top-0 lg:top-[-12px] lg:left-0 w-6 h-6 rounded-full bg-primary flex items-center justify-center">
+<span class="font-mono-label text-[10px] text-surface-container-lowest">08</span>
+</div>
+<div class="mb-sm flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">local_shipping</span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Delivery</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Secure packaging and dispatch of verified components to your facility.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-xl bg-surface-container border-y border-outline-variant">
+<div class="max-w-container-max mx-auto px-gutter text-center">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-sm">Ready to start production?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg max-w-2xl mx-auto">Submit your technical drawings and specifications for a comprehensive evaluation and detailed quotation.</p>
+<a class="inline-flex items-center gap-sm px-lg py-md bg-primary text-on-primary font-label-caps text-label-caps rounded-lg hover:brightness-90 transition-all border border-transparent hover:shadow-[0_2px_4px_rgba(0,0,0,0.1)]" href="/rfq">
+<span class="material-symbols-outlined">upload_file</span>
+                    Submit Your Drawing
+                </a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-inverse-surface dark:bg-surface-container-lowest text-primary-fixed dark:text-primary font-body-sm text-body-sm full-width">
+<div class="max-w-container-max mx-auto px-gutter py-xl grid grid-cols-1 md:grid-cols-4 gap-md border-t border-surface-variant/20 dark:border-outline-variant">
+<div>
+<div class="mb-sm"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkPjBxBT4C2Xluq6aEgujFR3W1VDo_0mi6fmir8G4c43041crgBm_-Zf6qOjSMsFzRWW6sOPll-GpzQyE85Ytndy0p73OG3Etg7Zx9F5DpPMlFXqr8JK3m9sRk-Sqb4EBUWS6BCl4lLf1yAOxM5yfoNVSEG_bvCY361_XFGyMCOUBCC76SQKR811qZ3HK8EPsuJoS0nB1tKABgfq-AOKiaym4ty_r6CKCjCxq6BuORdzw83ALXC5c8" alt="Ruptech Engineers Logo" class="h-12 w-auto object-contain"></div>
+<p class="text-surface-variant dark:text-on-surface-variant mb-md">Engineering Excellence for Industrial Applications.</p>
+<p class="text-surface-variant dark:text-on-surface-variant font-mono-label text-mono-label">© 2024 Ruptech Engineers Pvt. Ltd. All Rights Reserved. GSTIN: [Placeholder]</p>
+</div>
+<div class="md:col-span-3 grid grid-cols-2 sm:grid-cols-4 gap-md">
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-white dark:hover:text-black transition-colors font-label-caps text-label-caps" href="#">Home</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-white dark:hover:text-black transition-colors font-label-caps text-label-caps" href="#">About Us</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-white dark:hover:text-black transition-colors font-label-caps text-label-caps" href="#">Products</a>
+<a class="text-primary-fixed dark:text-primary underline font-label-caps text-label-caps" href="#">Manufacturing</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-white dark:hover:text-black transition-colors font-label-caps text-label-caps" href="#">Certifications</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-white dark:hover:text-black transition-colors font-label-caps text-label-caps" href="#">Gallery</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-white dark:hover:text-black transition-colors font-label-caps text-label-caps" href="#">Contact Us</a>
+<a class="text-surface-variant dark:text-on-surface-variant hover:text-white dark:hover:text-black transition-colors font-label-caps text-label-caps" href="#">Privacy Policy</a>
+</div>
+</div>
+</footer>
+
+
+</body></html>

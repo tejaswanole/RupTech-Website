@@ -1,0 +1,259 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Contact Us - Ruptech Engineers</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#dfe3e1",
+                        "tertiary-fixed": "#ffdbd1",
+                        "on-tertiary-fixed": "#3b0900",
+                        "on-tertiary-fixed-variant": "#743320",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#0e7c6b",
+                        "secondary": "#325f9b",
+                        "inverse-surface": "#2d3130",
+                        "surface-container-high": "#e5e9e6",
+                        "outline": "#6e7a76",
+                        "surface-container-low": "#f0f5f2",
+                        "inverse-primary": "#7bd7c3",
+                        "on-secondary-fixed-variant": "#124782",
+                        "primary-fixed": "#98f3de",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#ffeeea",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#00201a",
+                        "tertiary-container": "#a55943",
+                        "surface-container": "#ebefec",
+                        "surface-bright": "#f6faf7",
+                        "surface-tint": "#006b5c",
+                        "surface": "#f6faf7",
+                        "on-secondary-container": "#194b86",
+                        "secondary-fixed": "#d5e3ff",
+                        "primary-fixed-dim": "#7bd7c3",
+                        "tertiary": "#87422d",
+                        "on-secondary": "#ffffff",
+                        "background": "#f6faf7",
+                        "primary": "#006153",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#181d1b",
+                        "secondary-fixed-dim": "#a7c8ff",
+                        "on-background": "#181d1b",
+                        "surface-container-highest": "#dfe3e1",
+                        "inverse-on-surface": "#eef2ef",
+                        "surface-dim": "#d7dbd8",
+                        "outline-variant": "#bdc9c5",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb5a0",
+                        "on-surface-variant": "#3e4946",
+                        "on-primary-container": "#bdffee",
+                        "secondary-container": "#93bdff",
+                        "on-primary-fixed-variant": "#005145",
+                        "on-secondary-fixed": "#001c3b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "lg": "48px",
+                        "container-max": "1280px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "xl": "80px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "mono-label": ["JetBrains Mono"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-sm": ["18px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "mono-label": ["13px", { "lineHeight": "1", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background antialiased flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-inverse-surface docked full-width top-0 sticky border-b border-outline-variant dark:border-outline z-50">
+<div class="max-w-container-max mx-auto px-gutter flex justify-between items-center h-xl">
+<div class="h-10 flex items-center"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkPjBxBT4C2Xluq6aEgujFR3W1VDo_0mi6fmir8G4c43041crgBm_-Zf6qOjSMsFzRWW6sOPll-GpzQyE85Ytndy0p73OG3Etg7Zx9F5DpPMlFXqr8JK3m9sRk-Sqb4EBUWS6BCl4lLf1yAOxM5yfoNVSEG_bvCY361_XFGyMCOUBCC76SQKR811qZ3HK8EPsuJoS0nB1tKABgfq-AOKiaym4ty_r6CKCjCxq6BuORdzw83ALXC5c8" alt="Ruptech Engineers Logo" class="h-full w-auto object-contain"></div>
+<nav class="hidden md:flex gap-md">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-caps text-label-caps" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-caps text-label-caps" href="#">About</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-caps text-label-caps" href="#">Products</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-caps text-label-caps" href="#">Manufacturing</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-caps text-label-caps" href="#">Certifications</a>
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary dark:border-primary-fixed pb-1 hover:text-primary dark:hover:text-primary-fixed transition-colors font-label-caps text-label-caps" href="#">Contact</a>
+</nav>
+<div class="flex gap-sm">
+<button class="bg-secondary text-on-secondary px-md py-sm rounded font-label-caps text-label-caps hover:bg-opacity-90 transition-opacity hidden md:block">WhatsApp</button>
+<button class="bg-primary-container text-on-primary-container px-md py-sm rounded font-label-caps text-label-caps hover:bg-opacity-90 transition-opacity">Call Now</button>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="bg-surface-container-low py-xl border-b border-outline-variant">
+<div class="max-w-container-max mx-auto px-gutter">
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-sm">Contact Us</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                    Get in touch with Ruptech Engineers for inquiries about our manufacturing capabilities, product specifications, or to request a quote.
+                </p>
+</div>
+</section>
+<!-- Main Content Grid -->
+<section class="max-w-container-max mx-auto px-gutter py-xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+<!-- Form Column -->
+<div class="lg:col-span-7">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-lg">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-md">Send an Inquiry</h2>
+<form class="space-y-md">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-xs">Full Name</label>
+<input class="w-full bg-surface border border-outline-variant rounded px-sm py-sm focus:border-primary focus:ring-1 focus:ring-primary font-body-md text-body-md text-on-surface" placeholder="John Doe" type="text">
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-xs">Phone Number</label>
+<input class="w-full bg-surface border border-outline-variant rounded px-sm py-sm focus:border-primary focus:ring-1 focus:ring-primary font-body-md text-body-md text-on-surface" placeholder="+91 1234567890" type="tel">
+</div>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-xs">Email Address</label>
+<input class="w-full bg-surface border border-outline-variant rounded px-sm py-sm focus:border-primary focus:ring-1 focus:ring-primary font-body-md text-body-md text-on-surface" placeholder="john@example.com" type="email">
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-xs">Area of Interest</label>
+<select class="w-full bg-surface border border-outline-variant rounded px-sm py-sm focus:border-primary focus:ring-1 focus:ring-primary font-body-md text-body-md text-on-surface">
+<option>General Inquiry</option>
+<option>Custom Manufacturing</option>
+<option>Product Specifications</option>
+<option>Partnership/Vendor</option>
+</select>
+</div>
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-xs">Message</label>
+<textarea class="w-full bg-surface border border-outline-variant rounded px-sm py-sm focus:border-primary focus:ring-1 focus:ring-primary font-body-md text-body-md text-on-surface" placeholder="Please provide details of your inquiry..." rows="4"></textarea>
+</div>
+<button class="bg-primary-container text-on-primary-container px-lg py-sm rounded font-label-caps text-label-caps hover:bg-opacity-90 transition-opacity w-full md:w-auto" type="submit">Submit Inquiry</button>
+<div class="flex items-center gap-xs mt-sm text-surface-tint">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span class="font-mono-label text-mono-label">We typically respond within 24 hours.</span>
+</div>
+</form>
+</div>
+</div>
+<!-- Contact Info Column -->
+<div class="lg:col-span-5 space-y-md">
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md">
+<div class="flex items-start gap-sm mb-md">
+<span class="material-symbols-outlined text-primary text-[24px]">location_on</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Unit 1</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Plot L-237, MIDC Ahmednagar<br>Maharashtra, India 414111</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md">
+<div class="flex items-start gap-sm mb-md">
+<span class="material-symbols-outlined text-primary text-[24px]">factory</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Unit 2</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Plot L-248, MIDC Ahmednagar<br>Maharashtra, India 414111</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant rounded-lg p-md">
+<div class="flex flex-col gap-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">call</span>
+<span class="font-mono-label text-mono-label text-on-surface-variant">+91 98765 43210</span>
+</div>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">mail</span>
+<span class="font-mono-label text-mono-label text-on-surface-variant">info@ruptechengineers.com</span>
+</div>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">schedule</span>
+<span class="font-mono-label text-mono-label text-on-surface-variant">Mon-Sat: 9:00 AM - 6:00 PM (IST)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Map Section -->
+<section class="border-t border-outline-variant h-96 w-full relative bg-surface-container-high">
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-outline text-[48px] opacity-50">map</span>
+<span class="ml-sm font-label-caps text-label-caps text-outline opacity-50">Ahmednagar, Maharashtra, India</span>
+</div>
+<!-- Interactive map implementation would go here -->
+<img class="w-full h-full object-cover opacity-80 mix-blend-multiply" data-alt="A highly detailed, professional map view of Ahmednagar MIDC industrial area showing industrial plots. The map uses a clean, light-mode corporate aesthetic with subtle greys, whites, and teal accents for roads and borders. A stylized, modern teal location pin marker sits prominently on plot L-237/248. High contrast, precise engineering drawing style." data-location="Ahmednagar, Maharashtra, India" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNrytvd1a-PLU5undQ8WjP2qL7ToS3kxj7mH-rUWv054DYg7TxaRB5LH2vXMPJRr2p3Q7MwpR8vbHFYWyAuvh9rs4-IU2wTj3Dyp8rzGcU5UoeNnqR-IB_AeghVgKB-0sUO7UQD5rXs3IgO9SK0JVlzSOCWF7xCUWYzpl9VPimenBM5frSZfge3SdpWg8WABMbW3Gz7qxGLMStzv10__rgmjQ7582OL7xcCrCNGO-D1dao1QvOiOiB">
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-inverse-surface dark:bg-surface-container-lowest full-width">
+<div class="max-w-container-max mx-auto px-gutter py-xl grid grid-cols-1 md:grid-cols-4 gap-md">
+<div class="flex flex-col gap-sm">
+<div class="h-12 mb-sm flex items-center"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkPjBxBT4C2Xluq6aEgujFR3W1VDo_0mi6fmir8G4c43041crgBm_-Zf6qOjSMsFzRWW6sOPll-GpzQyE85Ytndy0p73OG3Etg7Zx9F5DpPMlFXqr8JK3m9sRk-Sqb4EBUWS6BCl4lLf1yAOxM5yfoNVSEG_bvCY361_XFGyMCOUBCC76SQKR811qZ3HK8EPsuJoS0nB1tKABgfq-AOKiaym4ty_r6CKCjCxq6BuORdzw83ALXC5c8" alt="Ruptech Engineers Logo" class="h-full w-auto object-contain"></div>
+<p class="font-body-sm text-body-sm text-surface-variant dark:text-on-surface-variant">
+                    © 2024 Ruptech Engineers Pvt. Ltd. All Rights Reserved. GSTIN: [Placeholder]
+                </p>
+</div>
+<div class="flex flex-col gap-sm">
+<h4 class="font-label-caps text-label-caps text-primary-fixed dark:text-primary mb-xs">Quick Links</h4>
+<a class="font-body-sm text-body-sm text-surface-variant dark:text-on-surface-variant hover:text-white dark:hover:text-black transition-colors" href="#">Home</a>
+<a class="font-body-sm text-body-sm text-surface-variant dark:text-on-surface-variant hover:text-white dark:hover:text-black transition-colors" href="#">About Us</a>
+<a class="font-body-sm text-body-sm text-surface-variant dark:text-on-surface-variant hover:text-white dark:hover:text-black transition-colors" href="#">Products</a>
+<a class="font-body-sm text-body-sm text-surface-variant dark:text-on-surface-variant hover:text-white dark:hover:text-black transition-colors" href="#">Manufacturing</a>
+</div>
+<div class="flex flex-col gap-sm">
+<h4 class="font-label-caps text-label-caps text-primary-fixed dark:text-primary mb-xs">Resources</h4>
+<a class="font-body-sm text-body-sm text-surface-variant dark:text-on-surface-variant hover:text-white dark:hover:text-black transition-colors" href="#">Certifications</a>
+<a class="font-body-sm text-body-sm text-surface-variant dark:text-on-surface-variant hover:text-white dark:hover:text-black transition-colors" href="#">Gallery</a>
+<a class="font-body-sm text-body-sm text-primary-fixed dark:text-primary underline hover:text-white dark:hover:text-black transition-colors" href="#">Contact Us</a>
+<a class="font-body-sm text-body-sm text-surface-variant dark:text-on-surface-variant hover:text-white dark:hover:text-black transition-colors" href="#">Privacy Policy</a>
+</div>
+</div>
+</footer>
+
+
+</body></html>

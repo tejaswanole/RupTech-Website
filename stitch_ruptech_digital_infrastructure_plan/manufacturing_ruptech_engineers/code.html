@@ -1,0 +1,323 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Manufacturing Infrastructure - Ruptech Engineers</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#dfe3e1",
+                        "tertiary-fixed": "#ffdbd1",
+                        "on-tertiary-fixed": "#3b0900",
+                        "on-tertiary-fixed-variant": "#743320",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#0e7c6b",
+                        "secondary": "#325f9b",
+                        "inverse-surface": "#2d3130",
+                        "surface-container-high": "#e5e9e6",
+                        "outline": "#6e7a76",
+                        "surface-container-low": "#f0f5f2",
+                        "inverse-primary": "#7bd7c3",
+                        "on-secondary-fixed-variant": "#124782",
+                        "primary-fixed": "#98f3de",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#ffeeea",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#00201a",
+                        "tertiary-container": "#a55943",
+                        "surface-container": "#ebefec",
+                        "surface-bright": "#f6faf7",
+                        "surface-tint": "#006b5c",
+                        "surface": "#f6faf7",
+                        "on-secondary-container": "#194b86",
+                        "secondary-fixed": "#d5e3ff",
+                        "primary-fixed-dim": "#7bd7c3",
+                        "tertiary": "#87422d",
+                        "on-secondary": "#ffffff",
+                        "background": "#f6faf7",
+                        "primary": "#006153",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#181d1b",
+                        "secondary-fixed-dim": "#a7c8ff",
+                        "on-background": "#181d1b",
+                        "surface-container-highest": "#dfe3e1",
+                        "inverse-on-surface": "#eef2ef",
+                        "surface-dim": "#d7dbd8",
+                        "outline-variant": "#bdc9c5",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#ffb5a0",
+                        "on-surface-variant": "#3e4946",
+                        "on-primary-container": "#bdffee",
+                        "secondary-container": "#93bdff",
+                        "on-primary-fixed-variant": "#005145",
+                        "on-secondary-fixed": "#001c3b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "lg": "48px",
+                        "container-max": "1280px",
+                        "md": "24px",
+                        "gutter": "24px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "xl": "80px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "mono-label": ["JetBrains Mono"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "700" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-sm": ["18px", { "lineHeight": "1.4", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "mono-label": ["13px", { "lineHeight": "1", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="bg-surface border-b border-outline-variant w-full top-0 sticky z-50">
+<div class="max-w-container-max mx-auto px-gutter flex justify-between items-center h-xl">
+<!-- Brand -->
+<a class="font-headline-sm text-headline-sm font-bold text-primary flex items-center gap-xs focus:outline-none focus:ring-2 focus:ring-primary-container rounded" href="#"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkPjBxBT4C2Xluq6aEgujFR3W1VDo_0mi6fmir8G4c43041crgBm_-Zf6qOjSMsFzRWW6sOPll-GpzQyE85Ytndy0p73OG3Etg7Zx9F5DpPMlFXqr8JK3m9sRk-Sqb4EBUWS6BCl4lLf1yAOxM5yfoNVSEG_bvCY361_XFGyMCOUBCC76SQKR811qZ3HK8EPsuJoS0nB1tKABgfq-AOKiaym4ty_r6CKCjCxq6BuORdzw83ALXC5c8" alt="Ruptech Engineers Logo" class="h-10 w-auto object-cover"></a>
+<!-- Navigation Links (Desktop) -->
+<nav class="hidden md:flex space-x-md h-full items-center">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary-container rounded px-xs py-xs" href="#">Home</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary-container rounded px-xs py-xs" href="#">About</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary-container rounded px-xs py-xs" href="#">Products</a>
+<a class="font-label-caps text-label-caps text-primary border-b-2 border-primary pb-1 focus:outline-none focus:ring-2 focus:ring-primary-container rounded px-xs h-full flex items-center opacity-80 transition-opacity" href="#">Manufacturing</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary-container rounded px-xs py-xs" href="#">Certifications</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary-container rounded px-xs py-xs" href="#">Contact</a>
+</nav>
+<!-- Actions -->
+<div class="hidden md:flex items-center gap-sm">
+<a class="font-label-caps text-label-caps px-sm py-sm border border-secondary text-secondary rounded hover:bg-surface-variant transition-colors focus:outline-none focus:ring-2 focus:ring-secondary" href="#">WhatsApp</a>
+<a class="font-label-caps text-label-caps px-sm py-sm bg-primary-container text-on-primary-container rounded hover:brightness-90 transition-all focus:outline-none focus:ring-2 focus:ring-primary-fixed" href="#">Call Now</a>
+</div>
+<!-- Mobile Menu Toggle -->
+<button aria-label="Menu" class="md:hidden p-xs text-on-surface-variant hover:text-primary focus:outline-none rounded">
+<span class="material-symbols-outlined text-[28px]">menu</span>
+</button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative bg-surface-container-lowest border-b border-surface-variant py-xl overflow-hidden">
+<div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(#006153 1px, transparent 1px); background-size: 24px 24px;"></div>
+<div class="max-w-container-max mx-auto px-gutter relative z-10 text-center md:text-left grid grid-cols-1 md:grid-cols-2 gap-lg items-center">
+<div>
+<div class="inline-flex items-center gap-xs px-xs py-xs bg-surface-variant rounded text-on-surface-variant font-label-caps text-label-caps mb-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px]">factory</span> Infrastructure
+                    </div>
+<h1 class="font-headline-xl text-headline-xl text-on-background mb-md">Our Manufacturing <span class="text-primary">Facility</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg max-w-2xl">Built-up area across two facilities — Work 1: Plot L-237, MIDC Ahmednagar (7,000 sqft plot / 5,000 sqft built-up); Work 2: Plot L-248, MIDC Ahmednagar, PIN 414111 (10,000 sqft plot / 7,000 sqft built-up).</p>
+<div class="flex flex-col sm:flex-row gap-md justify-center md:justify-start">
+<!-- Location 1 -->
+<div class="flex items-start gap-sm p-sm bg-surface rounded border border-outline-variant hover:border-primary transition-colors group">
+<div class="w-10 h-10 rounded bg-primary-container text-on-primary-container flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div class="text-left">
+<h3 class="font-headline-sm text-headline-sm text-on-background">CNC Laser Cutting Machine (3KW, 1.5m x 3m)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Primary Assembly &amp; Machining</p>
+</div>
+</div>
+<!-- Location 2 -->
+<div class="flex items-start gap-sm p-sm bg-surface rounded border border-outline-variant hover:border-primary transition-colors group">
+<div class="w-10 h-10 rounded bg-primary-container text-on-primary-container flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined">map</span>
+</div>
+<div class="text-left">
+<h3 class="font-headline-sm text-headline-sm text-on-background">CNC Laser Cutting Machine (3KW, 1.5m x 3m)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Fabrication &amp; Coating Line</p>
+</div>
+</div>
+</div>
+</div>
+<div class="hidden md:block relative h-[400px] w-full rounded border border-outline-variant overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A wide-angle, highly detailed photograph of a clean, modern, brightly lit industrial manufacturing facility interior. Rows of advanced CNC machinery and neatly organized work stations are visible. The lighting is cold white, emphasizing a clean, technical, high-reliability engineering environment. High contrast, professional corporate photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_oAXaqP40rf2TZTN08U_g4fFOM-okO5UjT9oow7IURYY75ao0R1qqwaR7cySSCZgXes82IybojuclLJvlZduaa1uF_rS7ctRkqEeahJhmJBerIT6aSt4Zi5MWqDMQ7TlGOgXGfzuQxiVB_e7Nfnda4Mk_yXODrhuqCcyeEoBi9UQ0EgXjmH1larQJv8QnIrYisfexyqhyFSFnlZA63fsTUDnpS5MK9glKuIzwihZpRcsJATvG_Myh">
+</div>
+</div>
+</section>
+<!-- Machine Gallery (Bento Grid) -->
+<section class="py-xl max-w-container-max mx-auto px-gutter">
+<div class="mb-lg text-center md:text-left">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-xs">Advanced Machinery</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Precision equipment powering our engineering excellence.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- CNC Laser (Large) -->
+<div class="md:col-span-2 group relative overflow-hidden rounded border border-outline-variant bg-surface h-[300px] flex flex-col justify-end p-md hover:border-primary transition-colors">
+<img class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300" data-alt="A close-up, high-quality image of a modern industrial CNC laser cutting machine in operation, cutting through a thick sheet of metal. Bright sparks and a focused laser beam are visible. The machine has a sleek, heavy-duty grey and teal casing. The setting is a clean manufacturing floor. High contrast, technical aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcagvCae33aWBQj3G5JeEqXXG3CstAJIYl6EsbXepLmQrUDNp01xc29RI-VQZ4E4z0UivsBtwgeBah3RFmQo39tzBPhwNzvqhtbSDmr5DmAkxVU-woMhxDNyWH37qJmMYwA2CQrWONmb9ynOi8udXV--_6c4H1FEdoVOwrlCviCBCjWA8pya92XCguOVea5kJdxbS-xTOYxrEp5KnCFayS24jFIZHxpN5uVHAB4iSDEHDRI-A1qCub">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+<div class="relative z-10">
+<span class="inline-block px-xs py-1 bg-primary text-on-primary font-label-caps text-label-caps rounded mb-xs">Cutting</span>
+<h3 class="font-headline-md text-headline-md text-white">CNC Laser Cutting Machine (3KW, 1.5m x 3m)</h3>
+<p class="font-body-sm text-body-sm text-surface-container-high mt-xs max-w-md">High-speed, burr-free cutting for complex geometries and varying sheet thicknesses.</p>
+</div>
+</div>
+<!-- Turret Punch -->
+<div class="group relative overflow-hidden rounded border border-outline-variant bg-surface h-[300px] flex flex-col justify-end p-md hover:border-primary transition-colors">
+<img class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300" data-alt="A detailed photograph of an industrial CNC turret punch press machine in a clean factory setting. The machine is massive and sturdy, painted in industrial grey. A sheet of steel is being processed. The lighting is bright and even, highlighting the mechanical precision of the equipment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL5t2OG3RNfqAOTdIIL3O3-Zjowc_ACX7fxJy-5aO0wOCaNpVxn4ldGFM2EYv1rUHFftvl75JkUY6ShS7vyhLedM48KNP_KHF1FoeK531Y8fZcwyjFkK3HP6pok2SclV5X_zfUC4MYqxS74acoPBn3Zv4VQHgztW9DRnk69VFnCopeHn5lCKSHZ8ZyjCVuzKXctLwfuZbuxODm41MqB6O-2A0d6BxeK_h0sw412HevUS3JBo44jpTC">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+<div class="relative z-10">
+<span class="inline-block px-xs py-1 bg-secondary text-on-secondary font-label-caps text-label-caps rounded mb-xs">Punching</span>
+<h3 class="font-headline-sm text-headline-sm text-white">CNC Turret Punch</h3>
+</div>
+</div>
+<!-- Press Brake -->
+<div class="group relative overflow-hidden rounded border border-outline-variant bg-surface h-[250px] flex flex-col justify-end p-md hover:border-primary transition-colors">
+<img class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300" data-alt="A photograph showing a heavy-duty hydraulic press brake bending a large piece of shiny sheet metal. The machine jaws are clearly visible pressing into the metal. The environment is an organized, modern industrial workshop. The image conveys heavy manufacturing capability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlBHfQ8WQut9AssDUkNoTbcJTi2k5Vsb1eO1xMHZVbFVmCAUHJhAIlJuNvGXRMrwD8nKHM05x6k07BlNE-3rRNG052ORQtmb53ctuGc7BwdFFs-OuXbZZ-LIEN_Zdyi24CwgjWztt6-53I0Y5QwJW9buCehJB6Sdj3Ys0n27OKs9ol_UyUjmirGV3dir2zc7uqMePIOhmZT2HjRybx3-vJ6biqhrNSnO-pyRnB7kmGYpH6kIoMJXaq">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+<div class="relative z-10">
+<span class="inline-block px-xs py-1 bg-surface-variant text-on-surface-variant font-label-caps text-label-caps rounded mb-xs">Bending</span>
+<h3 class="font-headline-sm text-headline-sm text-white">CNC Press Brake (1.5m)</h3>
+</div>
+</div>
+<!-- NC Shearing -->
+<div class="group relative overflow-hidden rounded border border-outline-variant bg-surface h-[250px] flex flex-col justify-end p-md hover:border-primary transition-colors">
+<img class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300" data-alt="A technical, sharp image of an NC Shearing machine in an engineering facility. The industrial machine is captured with straight lines and metallic surfaces reflecting the bright factory lights. A stack of neatly sheared metal plates sits next to it." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAucTuVRg_QTT8u2XixhKEHHm3LSmRkjQHJfRd1n-rhqGHcMiteTio3ZsNpmznjw7_TFmmM61NAjCgOkcVedzCSEpIxZ3wybkVHdeVl4X34DfN5-xS1XCuoLw3MRuigxHSiArk6dSyLakGIL8XBxaGAJzJP-efbYmulkweoiM90L6X9qqhxAdVXlOD8y3sOturY_mZ4Ttfpt3HWxk6pa1VphI7npw3hU8hlq6gXBnCfn9qa847Sl0J">
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+<div class="relative z-10">
+<span class="inline-block px-xs py-1 bg-surface-variant text-on-surface-variant font-label-caps text-label-caps rounded mb-xs">Cutting</span>
+<h3 class="font-headline-sm text-headline-sm text-white">NC Shearing Machine (3m, 5mm)</h3>
+</div>
+</div>
+<!-- Welding & Assembly (Split Card) -->
+<div class="group relative overflow-hidden rounded border border-outline-variant bg-surface h-[250px] flex flex-col justify-end p-md hover:border-primary transition-colors"><img class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300" data-alt="A photograph of a heavy-duty NC press brake machine in an industrial setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlBHfQ8WQut9AssDUkNoTbcJTi2k5Vsb1eO1xMHZVbFVmCAUHJhAIlJuNvGXRMrwD8nKHM05x6k07BlNE-3rRNG052ORQtmb53ctuGc7BwdFFs-OuXbZZ-LIEN_Zdyi24CwgjWztt6-53I0Y5QwJW9buCehJB6Sdj3Ys0n27OKs9ol_UyUjmirGV3dir2zc7uqMePIOhmZT2HjRybx3-vJ6biqhrNSnO-pyRnB7kmGYpH6kIoMJXaq"><div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div><div class="relative z-10"><span class="inline-block px-xs py-1 bg-surface-variant text-on-surface-variant font-label-caps text-label-caps rounded mb-xs">Bending</span><h3 class="font-headline-sm text-headline-sm text-white">NC Press Brake Machine (3m, 5mm)</h3></div></div>
+</div>
+</section>
+<!-- Process Flow -->
+<section class="py-xl bg-surface-container border-y border-outline-variant">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="mb-lg text-center">
+<h2 class="font-headline-lg text-headline-lg text-on-background mb-xs">Production Workflow</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Streamlined from concept to dispatch.</p>
+</div>
+<div class="relative">
+<!-- Connecting Line -->
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-outline-variant -translate-y-1/2 z-0"></div>
+<div class="grid grid-cols-1 md:grid-cols-6 gap-md relative z-10">
+<!-- Step 1 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-12 h-12 rounded-full bg-surface border-2 border-primary flex items-center justify-center font-mono-label text-primary mb-sm shadow-sm">01</div>
+<h4 class="font-headline-sm text-headline-sm text-on-background text-sm">Design</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-xs mt-1">CAD/CAM Planning</p>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-12 h-12 rounded-full bg-surface border-2 border-outline-variant flex items-center justify-center font-mono-label text-on-surface-variant mb-sm">02</div>
+<h4 class="font-headline-sm text-headline-sm text-on-background text-sm">Cutting</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-xs mt-1">Laser &amp; Shearing</p>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-12 h-12 rounded-full bg-surface border-2 border-outline-variant flex items-center justify-center font-mono-label text-on-surface-variant mb-sm">03</div>
+<h4 class="font-headline-sm text-headline-sm text-on-background text-sm">Bending</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-xs mt-1">CNC Press Brake</p>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-12 h-12 rounded-full bg-surface border-2 border-outline-variant flex items-center justify-center font-mono-label text-on-surface-variant mb-sm">04</div>
+<h4 class="font-headline-sm text-headline-sm text-on-background text-sm">Welding</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-xs mt-1">Assembly Fabrication</p>
+</div>
+<!-- Step 5 -->
+<div class="group relative overflow-hidden rounded border border-outline-variant bg-surface h-[250px] flex flex-col justify-end p-md hover:border-primary transition-colors"><img class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300" data-alt="A photograph of a heavy-duty NC press brake machine in an industrial setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlBHfQ8WQut9AssDUkNoTbcJTi2k5Vsb1eO1xMHZVbFVmCAUHJhAIlJuNvGXRMrwD8nKHM05x6k07BlNE-3rRNG052ORQtmb53ctuGc7BwdFFs-OuXbZZ-LIEN_Zdyi24CwgjWztt6-53I0Y5QwJW9buCehJB6Sdj3Ys0n27OKs9ol_UyUjmirGV3dir2zc7uqMePIOhmZT2HjRybx3-vJ6biqhrNSnO-pyRnB7kmGYpH6kIoMJXaq"><div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div><div class="relative z-10"><span class="inline-block px-xs py-1 bg-surface-variant text-on-surface-variant font-label-caps text-label-caps rounded mb-xs">Bending</span><h3 class="font-headline-sm text-headline-sm text-white">NC Press Brake Machine (3m, 5mm)</h3></div></div>
+<!-- Step 6 -->
+<div class="flex flex-col items-center text-center">
+<div class="w-12 h-12 rounded-full bg-surface border-2 border-outline-variant flex items-center justify-center font-mono-label text-on-surface-variant mb-sm">06</div>
+<h4 class="font-headline-sm text-headline-sm text-on-background text-sm">Quality</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-xs mt-1">&amp; Dispatch</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-inverse-surface w-full">
+<div class="max-w-container-max mx-auto px-gutter py-xl grid grid-cols-1 md:grid-cols-4 gap-md">
+<!-- Brand Column -->
+<div class="col-span-1 md:col-span-1 flex flex-col gap-sm">
+<div class="flex items-center mb-sm"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkPjBxBT4C2Xluq6aEgujFR3W1VDo_0mi6fmir8G4c43041crgBm_-Zf6qOjSMsFzRWW6sOPll-GpzQyE85Ytndy0p73OG3Etg7Zx9F5DpPMlFXqr8JK3m9sRk-Sqb4EBUWS6BCl4lLf1yAOxM5yfoNVSEG_bvCY361_XFGyMCOUBCC76SQKR811qZ3HK8EPsuJoS0nB1tKABgfq-AOKiaym4ty_r6CKCjCxq6BuORdzw83ALXC5c8" alt="Ruptech Engineers Logo" class="h-10 w-auto object-cover"></div>
+<p class="font-body-sm text-body-sm text-surface-variant mt-xs">
+                    Engineering Excellence. Delivering high-quality industrial manufacturing and fabrication solutions.
+                </p>
+</div>
+<!-- Quick Links -->
+<div class="col-span-1">
+<h4 class="font-label-caps text-label-caps text-surface-variant mb-sm tracking-wider uppercase">Navigation</h4>
+<ul class="flex flex-col gap-xs font-body-sm text-body-sm">
+<li class=""><a class="text-surface-variant hover:text-white transition-colors" href="#">Home</a></li>
+<li class=""><a class="text-surface-variant hover:text-white transition-colors" href="#">About Us</a></li>
+<li class=""><a class="text-surface-variant hover:text-white transition-colors" href="#">Products</a></li>
+<li class=""><a class="text-primary-fixed underline hover:text-white transition-colors" href="#">Manufacturing</a></li>
+<li class=""><a class="text-surface-variant hover:text-white transition-colors" href="#">Certifications</a></li>
+<li class=""><a class="text-surface-variant hover:text-white transition-colors" href="#">Gallery</a></li>
+</ul>
+</div>
+<!-- Support Links -->
+<div class="col-span-1">
+<h4 class="font-label-caps text-label-caps text-surface-variant mb-sm tracking-wider uppercase">Support</h4>
+<ul class="flex flex-col gap-xs font-body-sm text-body-sm">
+<li class=""><a class="text-surface-variant hover:text-white transition-colors" href="#">Contact Us</a></li>
+<li class=""><a class="text-surface-variant hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<!-- Contact Info -->
+<div class="col-span-1">
+<h4 class="font-label-caps text-label-caps text-surface-variant mb-sm tracking-wider uppercase">Locations</h4>
+<ul class="flex flex-col gap-xs font-body-sm text-body-sm text-surface-variant">
+<li class="flex items-start gap-xs"><span class="material-symbols-outlined text-[16px] mt-[2px]">location_on</span> Plot L-237, Industrial Area</li>
+<li class="flex items-start gap-xs"><span class="material-symbols-outlined text-[16px] mt-[2px]">location_on</span> Plot L-248, Industrial Area</li>
+</ul>
+</div>
+</div>
+<!-- Copyright -->
+<div class="border-t border-outline/30">
+<div class="max-w-container-max mx-auto px-gutter py-sm flex flex-col md:flex-row justify-between items-center font-body-sm text-body-sm text-surface-variant text-xs">
+<p class="">© 2024 Ruptech Engineers Pvt. Ltd. All Rights Reserved. GSTIN: [Placeholder]</p>
+</div>
+</div>
+</footer>
+
+
+</body></html>
