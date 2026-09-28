@@ -76,7 +76,7 @@ export default function ManufacturingPage() {
               className="w-full h-full"
               style={{
                 backgroundImage:
-                  "url('https://images.unsplash.com/photo-1565043666747-69f6646db940?w=800&q=80')",
+                  "url('/images/products/apfc-panel/apfc_panel_0.webp')",
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}
@@ -99,23 +99,9 @@ export default function ManufacturingPage() {
               key={machine.name}
               className={`group relative overflow-hidden rounded border border-outline-variant bg-surface ${
                 i === 0 ? 'md:col-span-2' : ''
-              } h-[280px] flex flex-col justify-end p-md hover:border-primary transition-colors`}
-              style={{
-                backgroundImage: `url('https://images.unsplash.com/photo-${
-                  i === 0
-                    ? '1504917595217-d4dc5ebe6122'
-                    : i === 1
-                    ? '1581091226825-a6a2a5aee158'
-                    : i === 2
-                    ? '1565043666747-69f6646db940'
-                    : i === 3
-                    ? '1504328345606-18bbc8c9d7d1'
-                    : '1581091226825-a6a2a5aee158'
-                }?w=800&q=70')`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
+              } h-[280px] flex flex-col justify-end p-md hover:border-primary transition-colors bg-inverse-surface`}
             >
+              <div className="absolute inset-0 bg-grid-pattern opacity-40" aria-hidden="true" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
               <div className="relative z-10">
                 <span

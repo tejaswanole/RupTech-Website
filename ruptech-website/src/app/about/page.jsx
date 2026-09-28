@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Shield, Settings, Handshake, CheckCircle, Calendar, Building2, TrendingUp, Layers } from 'lucide-react';
 import ClientLogoGrid from '@/components/ClientLogoGrid';
 import CTAButton from '@/components/CTAButton';
@@ -45,7 +46,7 @@ export default function AboutPage() {
           className="absolute inset-0 z-0"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1565043666747-69f6646db940?w=1600&q=80')",
+              "url('/images/products/storage-racks/slotted_angle_rack_0.webp')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -88,15 +89,15 @@ export default function AboutPage() {
           </div>
 
           <div className="relative h-[500px] rounded border border-outline-variant overflow-hidden group p-2 bg-surface-container-lowest">
-            <div
-              className="w-full h-full object-cover rounded transition-transform duration-700 group-hover:scale-105 bg-surface-container"
-              style={{
-                backgroundImage:
-                  "url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=80')",
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
-            />
+            <div className="relative w-full h-full rounded overflow-hidden bg-surface-container">
+              <Image
+                src="/images/products/feeder-pillar/feeder_pillar_0.webp"
+                alt="Outdoor feeder pillar enclosure built at the Ruptech MIDC Ahmednagar facility"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover motion-scale transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
             {/* Floating ISO card */}
             <div className="absolute bottom-lg right-lg z-20 glass-panel p-md rounded shadow-sm">
               <div className="flex items-center gap-sm">

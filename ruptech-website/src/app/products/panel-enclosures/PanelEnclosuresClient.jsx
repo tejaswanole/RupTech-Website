@@ -72,7 +72,7 @@ function ProductImage({ src, alt }) {
         alt={alt}
         fill
         sizes="(max-width: 768px) 50vw, 200px"
-        className="object-cover group-hover:scale-105 transition-transform duration-500"
+        className="object-cover motion-scale group-hover:scale-105 transition-transform duration-300"
         onError={() => setError(true)}
         loading="lazy"
       />

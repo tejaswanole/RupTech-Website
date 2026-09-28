@@ -32,7 +32,7 @@ export default function ContactPageClient() {
     }
   };
 
-  const inputCls = 'w-full bg-surface border border-outline-variant rounded px-sm py-sm focus:border-primary focus:ring-1 focus:ring-primary font-body-md text-body-md text-on-surface outline-none transition-colors';
+  const inputCls = 'w-full bg-surface border border-outline-variant rounded px-sm py-sm focus:border-primary focus:ring-1 focus:ring-primary user-invalid:border-error user-invalid:ring-1 user-invalid:ring-error font-body-md text-body-md text-on-surface outline-none transition-colors';
   const labelCls = 'block font-label-caps text-label-caps text-on-surface-variant mb-xs uppercase';
 
   return (
@@ -76,7 +76,7 @@ export default function ContactPageClient() {
                     </div>
                     <div>
                       <label htmlFor="phone" className={labelCls}>Phone Number *</label>
-                      <input id="phone" name="phone" type="tel" required value={form.phone} onChange={handleChange} placeholder="+91 98765 43210" className={inputCls} />
+                      <input id="phone" name="phone" type="tel" required pattern="[0-9+ \(\)\-]{7,20}" title="Digits, spaces, +, - and brackets only (7 to 20 characters)" value={form.phone} onChange={handleChange} placeholder="+91 98765 43210" className={inputCls} />
                     </div>
                   </div>
 

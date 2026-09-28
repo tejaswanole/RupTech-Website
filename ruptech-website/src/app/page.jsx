@@ -131,7 +131,7 @@ export default function HomePage() {
           className="absolute inset-0 z-0 opacity-30 mix-blend-overlay"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1600&q=80')",
+              "url('/images/products/bus-bar-box/bus_bar_box_0.webp')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}

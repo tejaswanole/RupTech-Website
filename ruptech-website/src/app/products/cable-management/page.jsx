@@ -73,7 +73,7 @@ export default function CableManagementPage() {
                   alt="Stack of G.I. perforated cable trays"
                   fill
                   sizes="(max-width: 768px) 100vw, 400px"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover motion-scale group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
               </div>

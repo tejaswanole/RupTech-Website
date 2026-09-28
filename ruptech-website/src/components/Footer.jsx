@@ -23,7 +23,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-inverse-surface w-full">
+    <footer className="bg-inverse-surface w-full border-t-4 border-primary-container">
       <div className="max-w-container-max mx-auto px-gutter py-xl grid grid-cols-1 md:grid-cols-4 gap-md">
         {/* Brand */}
         <div className="md:col-span-1">

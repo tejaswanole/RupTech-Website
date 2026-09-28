@@ -1,4 +1,4 @@
-import { Inter } from 'next/font/google';
+import { Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -8,6 +8,13 @@ import { BUSINESS, SITE_URL } from '@/lib/constants';
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
+  display: 'swap',
+});
+
+const jetbrains = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: '500',
+  variable: '--font-jetbrains',
   display: 'swap',
 });
 
@@ -46,16 +53,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className={`${inter.variable} antialiased min-h-screen flex flex-col bg-background text-on-background`}>
+    <html lang="en" className={`${inter.variable} ${jetbrains.variable}`}>
+      <body className={`antialiased min-h-screen flex flex-col bg-background text-on-background`}>
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />

@@ -15,7 +15,7 @@ export default function ProductCard({ title, description, href, image, imageAlt 
             src={image}
             alt={imageAlt || title}
             fill
-            className="object-cover group-hover:scale-105 transition-transform duration-500"
+            className="object-cover motion-scale group-hover:scale-105 transition-transform duration-300"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-surface-container">

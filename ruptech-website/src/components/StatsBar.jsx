@@ -2,7 +2,7 @@ import { BUSINESS } from '@/lib/constants';
 
 const defaultStats = [
   { value: String(BUSINESS.established), label: 'Established' },
-  { value: BUSINESS.area, label: 'sqft Manufacturing Facility' },
+  { value: BUSINESS.area, label: 'Manufacturing Facility' },
   { value: BUSINESS.turnover, label: 'Annual Turnover (FY 2023-24)' },
   { value: BUSINESS.capital, label: 'Capital Invested' },
 ];
