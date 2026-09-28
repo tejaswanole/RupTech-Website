@@ -204,30 +204,64 @@ export const machines = [
     name: 'CNC Laser Cutting Machine (3KW, 1.5m × 3m)',
     category: 'Cutting',
     description: 'High-speed, burr-free cutting for complex geometries and varying sheet thicknesses.',
+    image: '/images/facility/laser-cutting.webp',
   },
   {
     name: 'CNC Turret Punch',
     category: 'Punching',
     description: 'Multi-tool punching press for complex hole patterns, louvres, and embossing.',
+    image: '/images/facility/turret-punch.webp',
   },
   {
     name: 'CNC Press Brake (1.5m)',
     category: 'Bending',
     description: 'Precision bending up to 3mm M.S. with back-gauge accuracy.',
+    image: '/images/facility/press-brake-cnc.webp',
   },
   {
     name: 'NC Shearing Machine (3m, 5mm)',
     category: 'Cutting',
     description: 'Clean, straight shearing cuts on large sheets up to 5mm thickness.',
+    image: '/images/facility/shearing.webp',
   },
   {
     name: 'NC Press Brake Machine (3m, 5mm)',
     category: 'Bending',
     description: 'Heavy-duty NC press brake for long sheet metal profiles.',
+    image: '/images/facility/press-brake-nc.webp',
   },
+  {
+    name: 'Spot Welding Machine',
+    category: 'Welding',
+    description: 'Resistance spot welding for fast, consistent joints on sheet metal assemblies.',
+    image: '/images/facility/spot-welding.webp',
+  },
+];
+
+// Welding and surface finishing line (listed in the company profile)
+export const finishingLine = [
   {
     name: 'MIG / TIG Welding Stations',
     category: 'Welding',
     description: 'Multiple welding bays with certified welders for structural & finish welding.',
+    image: '/images/facility/co2-welding.webp',
+  },
+  {
+    name: '7-Tank Pre-treatment Process',
+    category: 'Finishing',
+    description: 'Degreasing, rinsing and phosphating tanks that prepare parts before coating.',
+    image: '/images/facility/pretreatment-tanks.webp',
+  },
+  {
+    name: 'Powder Coating Booth',
+    category: 'Finishing',
+    description: 'In-house powder coating booth with powder recovery for an even finish.',
+    image: '/images/facility/paint-booth.webp',
+  },
+  {
+    name: 'Curing Oven',
+    category: 'Finishing',
+    description: 'Oven that cures the powder coat into a hard, durable finish.',
+    image: '/images/facility/curing-oven.webp',
   },
 ];

@@ -1,6 +1,7 @@
 import { Factory } from 'lucide-react';
 import CTAButton from '@/components/CTAButton';
-import { machines, processSteps } from '@/lib/productData';
+import Image from 'next/image';
+import { machines, finishingLine, processSteps } from '@/lib/productData';
 import { pageMeta } from '@/lib/seo';
 
 export const metadata = pageMeta({
@@ -30,6 +31,33 @@ const categoryColors = {
   Welding: 'bg-tertiary-container text-on-tertiary-container',
   Finishing: 'bg-surface-container-high text-on-surface',
 };
+
+function MachineCard({ machine }) {
+  return (
+    <article className="group flex flex-col overflow-hidden rounded-lg border border-outline-variant bg-surface-container-lowest hover:border-primary transition-colors">
+      <div className="relative aspect-[4/3] bg-white border-b border-outline-variant">
+        <Image
+          src={machine.image}
+          alt={machine.name}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-contain p-sm"
+        />
+      </div>
+      <div className="p-md flex flex-col gap-xs flex-grow">
+        <span
+          className={`self-start px-xs py-1 font-label-caps text-label-caps rounded ${
+            categoryColors[machine.category] || 'bg-surface-variant text-on-surface-variant'
+          }`}
+        >
+          {machine.category}
+        </span>
+        <h3 className="font-headline-sm text-headline-sm text-on-surface">{machine.name}</h3>
+        <p className="font-body-sm text-body-sm text-on-surface-variant">{machine.description}</p>
+      </div>
+    </article>
+  );
+}
 
 export default function ManufacturingPage() {
   return (
@@ -76,7 +104,7 @@ export default function ManufacturingPage() {
               className="w-full h-full"
               style={{
                 backgroundImage:
-                  "url('/images/products/apfc-panel/apfc_panel_0.webp')",
+                  "url('/images/facility/turret-punch.webp')",
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}
@@ -93,32 +121,21 @@ export default function ManufacturingPage() {
             Precision equipment powering our engineering excellence.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-          {machines.map((machine, i) => (
-            <div
-              key={machine.name}
-              className={`group relative overflow-hidden rounded border border-outline-variant bg-surface ${
-                i === 0 ? 'md:col-span-2' : ''
-              } h-[280px] flex flex-col justify-end p-md hover:border-primary transition-colors bg-inverse-surface`}
-            >
-              <div className="absolute inset-0 bg-grid-pattern opacity-40" aria-hidden="true" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-              <div className="relative z-10">
-                <span
-                  className={`inline-block px-xs py-1 font-label-caps text-label-caps rounded mb-xs ${
-                    categoryColors[machine.category] || 'bg-surface-variant text-on-surface-variant'
-                  }`}
-                >
-                  {machine.category}
-                </span>
-                <h3 className={`${i === 0 ? 'font-headline-md text-headline-md' : 'font-headline-sm text-headline-sm'} text-white`}>
-                  {machine.name}
-                </h3>
-                <p className="font-body-sm text-body-sm text-surface-container-high mt-xs max-w-[28rem]">
-                  {machine.description}
-                </p>
-              </div>
-            </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-md">
+          {machines.map((machine) => (
+            <MachineCard key={machine.name} machine={machine} />
+          ))}
+        </div>
+
+        <div className="mt-xl mb-lg text-center md:text-left">
+          <h2 className="font-headline-lg text-headline-lg text-on-background mb-xs">Welding &amp; Finishing Line</h2>
+          <p className="font-body-md text-body-md text-on-surface-variant">
+            From welded assembly to a cured powder-coated finish, under one roof.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-md">
+          {finishingLine.map((machine) => (
+            <MachineCard key={machine.name} machine={machine} />
           ))}
         </div>
       </section>
