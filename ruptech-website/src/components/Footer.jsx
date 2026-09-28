@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { MapPin, Mail, Phone } from 'lucide-react';
-import { BUSINESS } from '@/lib/constants';
+import { BUSINESS, phoneLink } from '@/lib/constants';
 
 const quickLinks = [
   { label: 'Home', href: '/' },
@@ -90,15 +90,14 @@ export default function Footer() {
                 {BUSINESS.addresses[1].line1}, {BUSINESS.addresses[1].line2}
               </span>
             </li>
-            <li>
-              <a
-                href={`tel:${BUSINESS.phone}`}
-                className="flex items-center gap-2 hover:text-white transition-colors"
-              >
-                <Phone size={14} className="text-primary-fixed opacity-70" />
-                {BUSINESS.phone}
-              </a>
-            </li>
+            {phoneLink && (
+              <li>
+                <a href={phoneLink} className="flex items-center gap-2 hover:text-white transition-colors">
+                  <Phone size={14} className="text-primary-fixed opacity-70" />
+                  {BUSINESS.phone}
+                </a>
+              </li>
+            )}
             <li>
               <a
                 href={`mailto:${BUSINESS.email}`}
@@ -116,9 +115,8 @@ export default function Footer() {
       <div className="border-t border-outline/30">
         <div className="max-w-container-max mx-auto px-gutter py-md text-center">
           <p className="font-body-sm text-body-sm text-surface-variant">
-            © {currentYear} {BUSINESS.name} All Rights Reserved.{' '}
-            {BUSINESS.gst !== '[GSTIN Pending]' && `GSTIN: ${BUSINESS.gst}`}
-            {BUSINESS.gst === '[GSTIN Pending]' && 'GSTIN: [Pending]'}
+            © {currentYear} {BUSINESS.name} All Rights Reserved.
+            {BUSINESS.gst && ` GSTIN: ${BUSINESS.gst}`}
           </p>
         </div>
       </div>

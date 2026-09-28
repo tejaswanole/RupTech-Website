@@ -5,7 +5,7 @@ import { MessageCircle, ImageOff } from 'lucide-react';
 import SpecTable from '@/components/SpecTable';
 import CTAButton from '@/components/CTAButton';
 import { panelEnclosures } from '@/lib/productData';
-import { BUSINESS } from '@/lib/constants';
+import { whatsappLink } from '@/lib/constants';
 
 const tabs = [
   { key: 'combiBox',           label: 'MCB + Socket (Combi) Box' },
@@ -100,7 +100,7 @@ function ProductImage({ src, alt }) {
 
 export default function PanelEnclosuresPage() {
   const [activeTab, setActiveTab] = useState('distributionBox');
-  const waUrl = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent('Hello! I am interested in Panel Enclosures & Boxes. Please share pricing details.')}`;
+  const waUrl = whatsappLink('Hello! I am interested in Panel Enclosures & Boxes. Please share pricing details.');
 
   const specCols = [
     { key: 'code',        label: 'Product Code', className: 'w-1/4 text-primary font-bold' },
@@ -212,16 +212,21 @@ export default function PanelEnclosuresPage() {
                 We offer bespoke engineering solutions tailored to your specific dimensional and environmental
                 requirements.
               </p>
-              <a
-                href={waUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                id="panel-whatsapp-btn"
-                className="w-full flex justify-center items-center gap-sm font-label-caps text-label-caps px-md py-sm bg-primary-container text-on-primary hover:bg-[#0c6b5c] rounded transition-colors"
-              >
-                <MessageCircle size={18} />
-                Request Quote for This Category
-              </a>
+              <div className="flex flex-col gap-sm">
+                <CTAButton href="/quote" className="w-full">Request a Quote</CTAButton>
+                {waUrl && (
+                  <a
+                    href={waUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    id="panel-whatsapp-btn"
+                    className="w-full flex justify-center items-center gap-sm font-label-caps text-label-caps px-md py-sm bg-[#25D366] text-white hover:bg-[#1ebe5e] rounded transition-colors"
+                  >
+                    <MessageCircle size={18} />
+                    WhatsApp Us
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         </div>

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X, MessageCircle, ChevronDown } from 'lucide-react';
-import { BUSINESS } from '@/lib/constants';
+import { BUSINESS, whatsappLink } from '@/lib/constants';
 
 const navLinks = [
   { label: 'Home', href: '/' },
@@ -49,7 +49,7 @@ export default function Navbar() {
     return pathname.startsWith(href);
   };
 
-  const waUrl = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(BUSINESS.whatsappMessage)}`;
+  const waUrl = whatsappLink();
 
   return (
     <header
@@ -120,16 +120,18 @@ export default function Navbar() {
 
         {/* Desktop Actions */}
         <div className="hidden lg:flex items-center gap-sm">
-          <a
-            href={waUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            id="navbar-whatsapp-btn"
-            className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1"
-          >
-            <MessageCircle size={16} />
-            WhatsApp
-          </a>
+          {waUrl && (
+            <a
+              href={waUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              id="navbar-whatsapp-btn"
+              className="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1"
+            >
+              <MessageCircle size={16} />
+              WhatsApp
+            </a>
+          )}
           <Link
             href="/quote"
             id="navbar-quote-btn"
@@ -179,14 +181,16 @@ export default function Navbar() {
             </div>
           ))}
           <div className="pt-sm border-t border-outline-variant flex flex-col gap-sm">
-            <a
-              href={waUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-secondary text-on-secondary font-label-caps text-label-caps px-md py-sm rounded text-center"
-            >
-              WhatsApp Us
-            </a>
+            {waUrl && (
+              <a
+                href={waUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#25D366] text-white font-label-caps text-label-caps px-md py-sm rounded text-center"
+              >
+                WhatsApp Us
+              </a>
+            )}
             <Link
               href="/quote"
               className="bg-primary-container text-on-primary font-label-caps text-label-caps px-md py-sm rounded text-center"

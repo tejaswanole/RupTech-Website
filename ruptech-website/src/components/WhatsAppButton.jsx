@@ -1,9 +1,8 @@
-'use client';
-import { BUSINESS } from '@/lib/constants';
+import { whatsappLink } from '@/lib/constants';
 
 export default function WhatsAppButton({ message }) {
-  const waMessage = message || BUSINESS.whatsappMessage;
-  const waUrl = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(waMessage)}`;
+  const waUrl = whatsappLink(message);
+  if (!waUrl) return null;
 
   return (
     <a
@@ -12,7 +11,7 @@ export default function WhatsAppButton({ message }) {
       rel="noopener noreferrer"
       id="floating-whatsapp-btn"
       aria-label="Chat with us on WhatsApp"
-      className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg hover:bg-[#1ebe5e] transition-colors whatsapp-pulse"
+      className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center shadow-lg hover:bg-[#1ebe5e] active:scale-95 transition whatsapp-pulse"
     >
       {/* WhatsApp SVG Icon */}
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7" aria-hidden="true">

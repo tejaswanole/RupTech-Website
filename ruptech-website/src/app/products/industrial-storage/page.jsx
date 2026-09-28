@@ -1,8 +1,8 @@
 import SpecTable from '@/components/SpecTable';
 import CTAButton from '@/components/CTAButton';
 import { storageRacks } from '@/lib/productData';
-import { BUSINESS } from '@/lib/constants';
-import { MessageCircle, AlertTriangle, ImageOff } from 'lucide-react';
+import { whatsappLink } from '@/lib/constants';
+import { MessageCircle } from 'lucide-react';
 import Image from 'next/image';
 
 export const metadata = {
@@ -20,7 +20,7 @@ const specCols = [
 ];
 
 export default function IndustrialStoragePage() {
-  const waUrl = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent('Hello! I am interested in Industrial Storage Racks. Please share details and pricing.')}`;
+  const waUrl = whatsappLink('Hello! I am interested in Industrial Storage Racks. Please share details and pricing.');
 
   return (
     <>
@@ -78,10 +78,12 @@ export default function IndustrialStoragePage() {
           </div>
           <div className="flex gap-sm">
             <CTAButton href="/quote">Get a Quote</CTAButton>
-            <a href={waUrl} target="_blank" rel="noopener noreferrer" id="storage-whatsapp-btn"
-              className="border border-outline text-on-surface-variant font-label-caps text-label-caps px-md py-sm rounded hover:border-primary hover:text-primary transition-colors flex items-center gap-2">
-              <MessageCircle size={16} /> WhatsApp
-            </a>
+            {waUrl && (
+              <a href={waUrl} target="_blank" rel="noopener noreferrer" id="storage-whatsapp-btn"
+                className="bg-[#25D366] text-white font-label-caps text-label-caps px-md py-sm rounded hover:bg-[#1ebe5e] transition-colors flex items-center gap-2">
+                <MessageCircle size={16} /> WhatsApp Us
+              </a>
+            )}
           </div>
         </section>
       </main>

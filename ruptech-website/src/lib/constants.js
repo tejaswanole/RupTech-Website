@@ -3,8 +3,10 @@ export const BUSINESS = {
   shortName: 'Ruptech Engineers',
   tagline: 'Complete Sheet Metal Product Solutions',
   email: 'ruptechengineers@gmail.com',
-  phone: '+91 98765 43210', // Placeholder — confirm with client
-  whatsapp: '919876543210',  // Placeholder — confirm with client (no + or spaces)
+  // Placeholder numbers: replace with the client-confirmed public number before launch.
+  // Call and WhatsApp buttons are hidden sitewide if these are left empty.
+  phone: '+91 98765 43210',
+  whatsapp: '919876543210', // country code, no + or spaces
   whatsappMessage: 'Hello! I am interested in your products and services.',
   addresses: [
     {
@@ -20,7 +22,7 @@ export const BUSINESS = {
       short: 'Plot L-248, MIDC Ahmednagar',
     },
   ],
-  gst: '[GSTIN Pending]', // Placeholder — confirm with client
+  gst: '', // GSTIN, shown in the footer once filled in
   established: 2019,
   turnover: '₹3.4 Cr+',
   capital: '₹2.5 Cr',
@@ -36,6 +38,15 @@ export const BUSINESS = {
     { label: 'Contact', href: '/contact' },
   ],
 };
+
+// wa.me link with a pre-filled message, or null when no WhatsApp number is set.
+export function whatsappLink(message = BUSINESS.whatsappMessage) {
+  if (!BUSINESS.whatsapp) return null;
+  return `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(message)}`;
+}
+
+// tel: link, or null when no phone number is set.
+export const phoneLink = BUSINESS.phone ? `tel:${BUSINESS.phone.replace(/\s/g, '')}` : null;
 
 export const CLIENTS = [
   'CG Power',

@@ -2,7 +2,8 @@ import { MessageCircle } from 'lucide-react';
 import Image from 'next/image';
 import SpecTable from '@/components/SpecTable';
 import { cableTrays } from '@/lib/productData';
-import { BUSINESS } from '@/lib/constants';
+import { whatsappLink } from '@/lib/constants';
+import CTAButton from '@/components/CTAButton';
 
 export const metadata = {
   title: 'Cable Management Systems',
@@ -18,7 +19,7 @@ const specCols = [
 ];
 
 export default function CableManagementPage() {
-  const waUrl = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent('Hello! I am interested in Cable Trays / Cable Management. Please share details.')}`;
+  const waUrl = whatsappLink('Hello! I am interested in Cable Trays / Cable Management. Please share details.');
 
   return (
     <>
@@ -92,15 +93,20 @@ export default function CableManagementPage() {
               <p className="font-body-sm text-body-sm text-on-surface-variant mb-md">
                 We manufacture cable trays in any width, height, and length to your project requirements.
               </p>
-              <a
-                href={waUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                id="cable-whatsapp-btn"
-                className="w-full flex justify-center items-center gap-sm font-label-caps text-label-caps px-md py-sm bg-primary-container text-on-primary hover:bg-[#0c6b5c] rounded transition-colors"
-              >
-                <MessageCircle size={18} /> Request Quote
-              </a>
+              <div className="flex flex-col gap-sm">
+                <CTAButton href="/quote" className="w-full">Request a Quote</CTAButton>
+                {waUrl && (
+                  <a
+                    href={waUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    id="cable-whatsapp-btn"
+                    className="w-full flex justify-center items-center gap-sm font-label-caps text-label-caps px-md py-sm bg-[#25D366] text-white hover:bg-[#1ebe5e] rounded transition-colors"
+                  >
+                    <MessageCircle size={18} /> WhatsApp Us
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         </div>

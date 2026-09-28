@@ -4,7 +4,7 @@ import StatsBar from '@/components/StatsBar';
 import ProductCard from '@/components/ProductCard';
 import ClientLogoGrid from '@/components/ClientLogoGrid';
 import CTAButton from '@/components/CTAButton';
-import { BUSINESS } from '@/lib/constants';
+import { whatsappLink, phoneLink } from '@/lib/constants';
 
 export const metadata = {
   title: 'Complete Sheet Metal Product Solutions',
@@ -69,7 +69,7 @@ const whyChooseUs = [
 ];
 
 export default function HomePage() {
-  const waUrl = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(BUSINESS.whatsappMessage)}`;
+  const waUrl = whatsappLink();
 
   return (
     <>
@@ -110,12 +110,14 @@ export default function HomePage() {
               <CTAButton href="/quote" size="lg" className="text-on-primary">
                 Request a Quote
               </CTAButton>
-              <a
-                href={`tel:${BUSINESS.phone}`}
-                className="bg-transparent border border-surface-container-lowest text-surface-container-lowest font-label-caps text-label-caps px-lg py-sm rounded hover:bg-surface-container-lowest/10 transition-colors flex items-center gap-2"
-              >
-                <Phone size={16} /> Call Us
-              </a>
+              {phoneLink && (
+                <a
+                  href={phoneLink}
+                  className="bg-transparent border border-surface-container-lowest text-surface-container-lowest font-label-caps text-label-caps px-lg py-sm rounded hover:bg-surface-container-lowest/10 active:scale-[0.97] transition flex items-center gap-2"
+                >
+                  <Phone size={16} /> Call Us
+                </a>
+              )}
             </div>
           </div>
         </div>
@@ -192,14 +194,16 @@ export default function HomePage() {
           </p>
           <div className="flex flex-wrap gap-sm justify-center">
             <CTAButton href="/quote" size="lg">Request a Quote</CTAButton>
-            <a
-              href={waUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#25D366] text-white font-label-caps text-label-caps px-lg py-sm rounded hover:bg-[#1ebe5e] transition-colors flex items-center gap-2"
-            >
-              WhatsApp Us
-            </a>
+            {waUrl && (
+              <a
+                href={waUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#25D366] text-white font-label-caps text-label-caps px-lg py-sm rounded hover:bg-[#1ebe5e] active:scale-[0.97] transition flex items-center gap-2"
+              >
+                WhatsApp Us
+              </a>
+            )}
           </div>
         </div>
       </section>

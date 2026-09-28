@@ -1,14 +1,14 @@
 'use client';
 import { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, CheckCircle, Loader2, MessageCircle } from 'lucide-react';
-import { BUSINESS } from '@/lib/constants';
+import { BUSINESS, whatsappLink, phoneLink } from '@/lib/constants';
 
 export default function ContactPageClient() {
   const [form, setForm] = useState({ name: '', phone: '', email: '', interest: '', message: '', hp: '' });
   const [status, setStatus] = useState('idle'); // idle | submitting | success | error
   const [error, setError] = useState('');
 
-  const waUrl = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent('Hello! I have an enquiry about your products.')}`;
+  const waUrl = whatsappLink('Hello! I have an enquiry about your products.');
 
   const handleChange = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
@@ -141,10 +141,12 @@ export default function ContactPageClient() {
 
             <div className="bg-surface-container-lowest border border-outline-variant rounded-lg p-md">
               <div className="flex flex-col gap-sm">
-                <a href={`tel:${BUSINESS.phone}`} className="flex items-center gap-sm hover:text-primary transition-colors">
-                  <Phone size={20} className="text-primary" />
-                  <span className="font-mono-label text-mono-label text-on-surface-variant">{BUSINESS.phone}</span>
-                </a>
+                {phoneLink && (
+                  <a href={phoneLink} className="flex items-center gap-sm hover:text-primary transition-colors">
+                    <Phone size={20} className="text-primary" />
+                    <span className="font-mono-label text-mono-label text-on-surface-variant">{BUSINESS.phone}</span>
+                  </a>
+                )}
                 <a href={`mailto:${BUSINESS.email}`} className="flex items-center gap-sm hover:text-primary transition-colors">
                   <Mail size={20} className="text-primary" />
                   <span className="font-mono-label text-mono-label text-on-surface-variant">{BUSINESS.email}</span>
@@ -156,16 +158,18 @@ export default function ContactPageClient() {
               </div>
             </div>
 
-            <a href={waUrl} target="_blank" rel="noopener noreferrer" id="contact-whatsapp-btn"
-              className="flex items-center gap-sm p-sm rounded bg-surface hover:bg-surface-container transition-colors border border-outline-variant group">
-              <div className="w-10 h-10 rounded-full bg-[#25D366] text-white flex items-center justify-center shrink-0">
-                <MessageCircle size={20} />
-              </div>
-              <div>
-                <p className="font-label-caps text-label-caps text-on-surface-variant">WhatsApp</p>
-                <p className="font-body-md text-body-md text-on-surface font-semibold">Message Us Directly</p>
-              </div>
-            </a>
+            {waUrl && (
+              <a href={waUrl} target="_blank" rel="noopener noreferrer" id="contact-whatsapp-btn"
+                className="flex items-center gap-sm p-sm rounded bg-surface hover:bg-surface-container transition-colors border border-outline-variant group">
+                <div className="w-10 h-10 rounded-full bg-[#25D366] text-white flex items-center justify-center shrink-0">
+                  <MessageCircle size={20} />
+                </div>
+                <div>
+                  <p className="font-label-caps text-label-caps text-on-surface-variant">WhatsApp</p>
+                  <p className="font-body-md text-body-md text-on-surface font-semibold">Message Us Directly</p>
+                </div>
+              </a>
+            )}
           </div>
         </div>
       </section>

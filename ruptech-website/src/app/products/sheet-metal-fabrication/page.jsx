@@ -1,6 +1,6 @@
 import CTAButton from '@/components/CTAButton';
 import { MessageCircle, Scissors, CircleDot, ArrowUpDown, Ruler, GitMerge, PaintBucket, CheckCircle } from 'lucide-react';
-import { BUSINESS } from '@/lib/constants';
+import { whatsappLink } from '@/lib/constants';
 
 export const metadata = {
   title: 'Sheet Metal Fabrication Services',
@@ -50,7 +50,7 @@ const finishingOptions = [
 ];
 
 export default function SheetMetalFabricationPage() {
-  const waUrl = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent('Hello! I need Sheet Metal Fabrication services. Please share details.')}`;
+  const waUrl = whatsappLink('Hello! I need Sheet Metal Fabrication services. Please share details.');
 
   return (
     <>
@@ -131,16 +131,18 @@ export default function SheetMetalFabricationPage() {
           </div>
           <div className="flex gap-sm flex-wrap shrink-0">
             <CTAButton href="/quote" variant="primary">Request a Quote</CTAButton>
-            <a
-              href={waUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              id="fabrication-whatsapp-btn"
-              className="bg-[#25D366] text-white font-label-caps text-label-caps px-md py-sm rounded
-                         hover:bg-[#1ebe5e] transition-colors flex items-center gap-2"
-            >
-              <MessageCircle size={16} /> WhatsApp Us
-            </a>
+            {waUrl && (
+              <a
+                href={waUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                id="fabrication-whatsapp-btn"
+                className="bg-[#25D366] text-white font-label-caps text-label-caps px-md py-sm rounded
+                           hover:bg-[#1ebe5e] transition-colors flex items-center gap-2"
+              >
+                <MessageCircle size={16} /> WhatsApp Us
+              </a>
+            )}
           </div>
         </section>
 

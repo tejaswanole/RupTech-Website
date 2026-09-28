@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { CheckCircle, Loader2, Upload, MessageCircle } from 'lucide-react';
-import { BUSINESS } from '@/lib/constants';
+import { BUSINESS, whatsappLink } from '@/lib/constants';
 
 export default function QuotePageClient() {
   const [form, setForm] = useState({
@@ -11,7 +11,7 @@ export default function QuotePageClient() {
   const [status, setStatus] = useState('idle');
   const [error, setError] = useState('');
 
-  const waUrl = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent('Hello! I would like to request a quote for your products.')}`;
+  const waUrl = whatsappLink('Hello! I would like to request a quote for your products.');
 
   const handleChange = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
@@ -127,9 +127,14 @@ export default function QuotePageClient() {
                   <div className="flex items-start gap-sm p-sm bg-surface-container border border-outline-variant rounded">
                     <Upload size={18} className="text-on-surface-variant mt-0.5 shrink-0" />
                     <p className="font-body-sm text-body-sm text-on-surface-variant">
-                      <strong className="text-on-surface">Drawings / Files:</strong> After submitting, you can share your DXF, DWG, or PDF drawings via WhatsApp{' '}
-                      (<a href={waUrl} target="_blank" rel="noopener noreferrer" className="text-primary underline">click here</a>) or email to{' '}
+                      <strong className="text-on-surface">Drawings / Files:</strong> After submitting, email your DXF, DWG, or PDF drawings to{' '}
                       <a href={`mailto:${BUSINESS.email}`} className="text-primary underline">{BUSINESS.email}</a>.
+                      {waUrl && (
+                        <>
+                          {' '}You can also share them on{' '}
+                          <a href={waUrl} target="_blank" rel="noopener noreferrer" className="text-primary underline">WhatsApp</a>.
+                        </>
+                      )}
                     </p>
                   </div>
 
@@ -174,14 +179,16 @@ export default function QuotePageClient() {
               </ul>
             </div>
 
-            <a href={waUrl} target="_blank" rel="noopener noreferrer" id="rfq-whatsapp-btn"
-              className="flex items-center gap-sm p-md rounded-lg bg-[#25D366] text-white hover:bg-[#1ebe5e] transition-colors">
-              <MessageCircle size={28} />
-              <div>
-                <p className="font-label-caps text-label-caps opacity-90">Prefer WhatsApp?</p>
-                <p className="font-headline-sm text-headline-sm font-bold">Chat With Us Directly</p>
-              </div>
-            </a>
+            {waUrl && (
+              <a href={waUrl} target="_blank" rel="noopener noreferrer" id="rfq-whatsapp-btn"
+                className="flex items-center gap-sm p-md rounded-lg bg-[#25D366] text-white hover:bg-[#1ebe5e] transition-colors">
+                <MessageCircle size={28} />
+                <div>
+                  <p className="font-label-caps text-label-caps opacity-90">Prefer WhatsApp?</p>
+                  <p className="font-headline-sm text-headline-sm font-bold">Chat With Us Directly</p>
+                </div>
+              </a>
+            )}
           </div>
         </div>
       </main>
