@@ -50,16 +50,17 @@ export function whatsappLink(message = BUSINESS.whatsappMessage) {
 // tel: link, or null when no phone number is set.
 export const phoneLink = BUSINESS.phone ? `tel:${BUSINESS.phone.replace(/\s/g, '')}` : null;
 
+// Client names and logos. Logos without a file show the name as text.
 export const CLIENTS = [
-  'CG Power',
-  'Schneider Electric',
-  'Exide',
-  'L&T',
-  'ISMT',
-  'Survi Solar',
-  'Raychem RPG',
-  'Tata Green',
-  'Heatcon',
-  'Laxmi',
-  'S.K. Enterprises',
+  { name: 'CG Power', logo: '/images/clients/cg-power.png' },
+  { name: 'Schneider Electric', logo: '/images/clients/schneider-electric.png' },
+  { name: 'Exide', logo: '/images/clients/exide.png' },
+  { name: 'L&T', logo: '/images/clients/larsen-toubro.png' },
+  { name: 'ISMT', logo: '/images/clients/ismt.png' },
+  { name: 'Survi Solar', logo: '/images/clients/suravi-solar.png' },
+  { name: 'Raychem RPG', logo: '/images/clients/raychem-rpg.png' },
+  { name: 'Tata Green', logo: '/images/clients/tata-green.png' },
+  { name: 'Heatcon', logo: '/images/clients/heatcon.png' },
+  { name: 'Laxmi', logo: null },
+  { name: 'S.K. Enterprises', logo: null },
 ];
