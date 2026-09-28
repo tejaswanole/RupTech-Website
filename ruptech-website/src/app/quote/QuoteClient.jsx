@@ -26,7 +26,8 @@ export default function QuotePageClient() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       });
-      if (!res.ok) throw new Error((await res.json()).error || 'Submission failed');
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || 'Submission failed. Please email us directly.');
       setStatus('success');
     } catch (err) {
       setStatus('error');
@@ -67,7 +68,7 @@ export default function QuotePageClient() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-md">
-                  <input type="text" name="hp" value={form.hp} onChange={handleChange} className="hidden" tabIndex={-1} autoComplete="off" />
+                  <input type="text" name="hp" value={form.hp} onChange={handleChange} className="absolute -left-[9999px] w-px h-px opacity-0" tabIndex={-1} autoComplete="off" aria-hidden="true" />
 
                   {/* Company / Contact */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
