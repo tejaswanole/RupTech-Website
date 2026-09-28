@@ -61,11 +61,11 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 shrink-0">
           <Image
-            src="/logo.png"
-            alt={`${BUSINESS.shortName} Logo`}
-            width={120}
+            src="/logo-horizontal.png"
+            alt={BUSINESS.shortName}
+            width={162}
             height={40}
-            className="h-10 w-auto object-contain"
+            className="h-9 w-auto"
             priority
           />
         </Link>

@@ -2,30 +2,33 @@
 import { useState } from 'react';
 import Image from 'next/image';
 
-export const metadata = undefined; // metadata is set in the server wrapper
-
 const filters = ['All', 'Panels & Boxes', 'Cable Trays', 'Storage Racks'];
 
+// w/h is the photo's aspect ratio, so landscape shots are not cropped into portrait frames.
 const galleryItems = [
   // Panels & Boxes
-  { id: 1, category: 'Panels & Boxes', label: 'Single Door Panel Box', src: '/images/products/panel-box/panel_box_0.webp' },
-  { id: 2, category: 'Panels & Boxes', label: 'Distribution Box 800x800', src: '/images/products/distribution-box/mseb_box_0.webp' },
-  { id: 3, category: 'Panels & Boxes', label: '100A Double Circuit MSEB Box', src: '/images/products/distribution-box/mseb_box_1.webp' },
-  { id: 4, category: 'Panels & Boxes', label: 'MCCB Box', src: '/images/products/mcb-box/mccb_box_0.webp' },
-  { id: 5, category: 'Panels & Boxes', label: 'EV Charger Box', src: '/images/products/ev-charger-box/ev_charger_box_0.webp' },
-  { id: 6, category: 'Panels & Boxes', label: '3 Way MCB Box', src: '/images/products/mcb-box/mcb_box_0.webp' },
-  { id: 7, category: 'Panels & Boxes', label: 'Double Door Generation Meter Box', src: '/images/products/generation-meter-box/generation_meter_box_0.webp' },
-  { id: 8, category: 'Panels & Boxes', label: 'Single Phase Meter Box', src: '/images/products/meter-box/meter_boxsinglethree_0.webp' },
-  { id: 9, category: 'Panels & Boxes', label: 'Agriculture Box', src: '/images/products/agriculture-box/agriculture_box_0.webp' },
-  { id: 10, category: 'Panels & Boxes', label: 'AC Box 3 Way SP MCB Metal Socket', src: '/images/products/panel-enclosures/mcb_plus_clad_socket_box_0.webp' },
-  
+  { id: 1, category: 'Panels & Boxes', label: 'Single Door Panel Box', src: '/images/products/panel-box/panel_box_0.webp', w: 4, h: 3 },
+  { id: 2, category: 'Panels & Boxes', label: 'Distribution Box 800x800', src: '/images/products/distribution-box/mseb_box_0.webp', w: 3, h: 4 },
+  { id: 3, category: 'Panels & Boxes', label: '100A Double Circuit MSEB Box', src: '/images/products/distribution-box/mseb_box_1.webp', w: 4, h: 3 },
+  { id: 4, category: 'Panels & Boxes', label: 'APFC Panel', src: '/images/products/apfc-panel/apfc_panel_0.webp', w: 3, h: 4 },
+  { id: 5, category: 'Panels & Boxes', label: 'MCCB Box', src: '/images/products/mcb-box/mccb_box_0.webp', w: 3, h: 4 },
+  { id: 6, category: 'Panels & Boxes', label: 'EV Charger Box', src: '/images/products/ev-charger-box/ev_charger_box_1.webp', w: 4, h: 3 },
+  { id: 7, category: 'Panels & Boxes', label: 'Feeder Pillar', src: '/images/products/feeder-pillar/feeder_pillar_0.webp', w: 3, h: 4 },
+  { id: 8, category: 'Panels & Boxes', label: 'Bus Bar Box', src: '/images/products/bus-bar-box/bus_bar_box_0.webp', w: 4, h: 3 },
+  { id: 9, category: 'Panels & Boxes', label: '3 Way MCB Box', src: '/images/products/mcb-box/mcb_box_0.webp', w: 3, h: 4 },
+  { id: 10, category: 'Panels & Boxes', label: 'Double Door Generation Meter Box', src: '/images/products/generation-meter-box/generation_meter_box_0.webp', w: 4, h: 3 },
+  { id: 11, category: 'Panels & Boxes', label: 'Single Phase Meter Box', src: '/images/products/meter-box/meter_boxsinglethree_0.webp', w: 4, h: 3 },
+  { id: 12, category: 'Panels & Boxes', label: 'Junction Box', src: '/images/products/junction-box/junction_box_0.webp', w: 3, h: 4 },
+  { id: 13, category: 'Panels & Boxes', label: 'Agriculture Box', src: '/images/products/agriculture-box/agriculture_box_0.webp', w: 3, h: 4 },
+  { id: 14, category: 'Panels & Boxes', label: 'AC Box 3 Way SP MCB Metal Socket', src: '/images/products/panel-enclosures/mcb_plus_clad_socket_box_0.webp', w: 4, h: 3 },
+
   // Cable Trays
-  { id: 11, category: 'Cable Trays', label: 'G.I. Cable Tray with Cover', src: '/images/products/cable-trays/cable_tray_0.webp' },
+  { id: 15, category: 'Cable Trays', label: 'G.I. Perforated Cable Trays', src: '/images/products/cable-trays/cable_tray_0.webp', w: 720, h: 807 },
 
   // Storage Racks
-  { id: 12, category: 'Storage Racks', label: 'Slotted Angle Rack', src: '/images/products/storage-racks/slotted_angle_rack_0.webp' },
-  { id: 13, category: 'Storage Racks', label: 'Super Shop / Mall Rack', src: '/images/products/storage-racks/mall_rack_0.webp' },
-  { id: 14, category: 'Storage Racks', label: 'Hardware Rack', src: '/images/products/storage-racks/hardware_rack_0.webp' },
+  { id: 16, category: 'Storage Racks', label: 'Slotted Angle Rack', src: '/images/products/storage-racks/slotted_angle_rack_0.webp', w: 3, h: 4 },
+  { id: 17, category: 'Storage Racks', label: 'Super Shop / Mall Rack', src: '/images/products/storage-racks/mall_rack_0.webp', w: 3, h: 4 },
+  { id: 18, category: 'Storage Racks', label: 'Hardware Rack', src: '/images/products/storage-racks/hardware_rack_0.webp', w: 3, h: 4 },
 ];
 
 export default function GalleryPageClient() {
@@ -73,7 +76,7 @@ export default function GalleryPageClient() {
               key={item.id}
               className="break-inside-avoid border border-outline-variant rounded overflow-hidden group hover:border-primary transition-colors cursor-pointer relative bg-surface-container"
             >
-              <div className="relative w-full overflow-hidden" style={{ aspectRatio: item.category === 'Panels & Boxes' ? '3/4' : '4/3' }}>
+              <div className="relative w-full overflow-hidden" style={{ aspectRatio: `${item.w}/${item.h}` }}>
                 <Image 
                   src={item.src}
                   alt={item.label}

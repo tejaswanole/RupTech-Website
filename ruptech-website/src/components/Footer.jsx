@@ -28,11 +28,11 @@ export default function Footer() {
         <div className="md:col-span-1">
           <div className="mb-md">
             <Image
-              src="/logo.png"
-              alt={`${BUSINESS.shortName} Logo`}
-              width={120}
+              src="/logo-horizontal-white.png"
+              alt={BUSINESS.shortName}
+              width={162}
               height={40}
-              className="h-10 w-auto object-contain brightness-0 invert"
+              className="h-10 w-auto"
             />
           </div>
           <p className="font-body-sm text-body-sm text-surface-variant mb-md leading-relaxed">

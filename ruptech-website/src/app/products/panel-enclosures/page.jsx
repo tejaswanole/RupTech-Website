@@ -10,7 +10,7 @@ import { whatsappLink } from '@/lib/constants';
 const tabs = [
   { key: 'combiBox',           label: 'MCB + Socket (Combi) Box' },
   { key: 'evChargerBox',       label: 'EV Charger Boxes' },
-  { key: 'mcbBox',             label: 'MCB Boxes' },
+  { key: 'mcbBox',             label: 'MCCB Boxes' },
   { key: 'distributionBox',    label: 'Distribution Boxes' },
   { key: 'meterBox',           label: 'Meter Boxes' },
   { key: 'generationMeterBox', label: 'Generation Meter Boxes' },
@@ -41,13 +41,13 @@ const galleryImages = {
     { src: '/images/products/panel-enclosures/mcb_plus_clad_socket_box_0.webp',  alt: 'AC Box 3 Way SP MCB Metal Socket' },
   ],
   evChargerBox: [
-    { src: '/images/products/ev-charger-box/ev_charger_box_0.webp',   alt: 'EV Charger Box' },
-    { src: '/images/products/ev-charger-box/ev_charger_box_1.webp', alt: 'EV Charger Box Side View' },
-    { src: '/images/products/ev-charger-box/ev_charger_box_2.webp', alt: 'EV Charger Box Alternate' },
+    { src: '/images/products/ev-charger-box/ev_charger_box_1.webp', alt: 'EV Charger Box, front with door closed' },
+    { src: '/images/products/ev-charger-box/ev_charger_box_2.webp', alt: 'EV Charger Box with door open' },
+    { src: '/images/products/ev-charger-box/ev_charger_box_0.webp', alt: 'EV Charger Box, side with ventilation grille' },
   ],
   mcbBox: [
-    { src: '/images/products/mcb-box/mcb_box_0.webp',  alt: '3 Way MCB Box' },
     { src: '/images/products/mcb-box/mccb_box_0.webp', alt: 'MCCB Box' },
+    { src: '/images/products/mcb-box/mcb_box_0.webp',  alt: '3 Way MCB Box' },
   ],
   distributionBox: [
     { src: '/images/products/distribution-box/mseb_box_0.webp',   alt: 'M.S. Distribution Box 800W×800H' },

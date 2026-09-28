@@ -57,10 +57,10 @@ export default function CableManagementPage() {
           <div className="lg:col-span-4 space-y-md">
             <div className="p-md bg-surface-container-low border border-outline-variant rounded-lg">
               <h3 className="font-headline-sm text-headline-sm text-on-surface mb-sm">Product Photo</h3>
-              <div className="aspect-video relative rounded border border-outline-variant overflow-hidden bg-surface-container group">
+              <div className="aspect-[4/5] relative rounded border border-outline-variant overflow-hidden bg-surface-container group">
                 <Image
                   src="/images/products/cable-trays/cable_tray_0.webp"
-                  alt="G.I. Cable Tray with Cover"
+                  alt="Stack of G.I. perforated cable trays"
                   fill
                   sizes="(max-width: 768px) 100vw, 400px"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"

@@ -21,11 +21,11 @@ export const evChargerBox = [
   { code: 'RUP-EV-10A',  description: 'EV Charger Box (Small)', size: '200W × 250H × 150D mm' },
 ];
 
-// ── 3. MCB Box ────────────────────────────────────────────────────────────────
+// ── 3. MCCB Box ───────────────────────────────────────────────────────────────
 export const mcbBox = [
-  { code: 'RUP-MCB32-100A', description: '3 or 4 Pole MCB Box (32A – 100A)',  size: '250W × 310H × 130D mm' },
-  { code: 'RUP-MCB125A',    description: '3 or 4 Pole MCB Box (up to 125A)',  size: '300W × 450H × 130D mm' },
-  { code: 'RUP-MCB250A',    description: '3 or 4 Pole MCB Box (160A – 250A)', size: '400W × 600H × 130D mm' },
+  { code: 'RUP-MCCB32-100A', description: '3 or 4 Pole MCCB Box (32A – 100A)',  size: '250W × 310H × 130D mm' },
+  { code: 'RUP-MCCB125A',    description: '3 or 4 Pole MCCB Box (32A – 125A)',  size: '300W × 450H × 130D mm' },
+  { code: 'RUP-MCCB250A',    description: '3 or 4 Pole MCCB Box (160A – 250A)', size: '400W × 600H × 130D mm' },
 ];
 
 // ── 4. Distribution Box ───────────────────────────────────────────────────────
@@ -46,7 +46,7 @@ export const meterBox = [
 export const generationMeterBox = [
   { code: 'RUP-GM01',   description: 'Generation Meter Box',                      size: '500W × 1000H × 350D mm' },
   { code: 'RUP-GMSM02', description: 'Generation Meter Box + MSEB Meter Box',     size: '1000W × 1000H × 350D mm' },
-  { code: 'RUP-GMSM03', description: 'Generation Meter Box (Extended)',            size: '750W × 500H × 350D mm' },
+  { code: 'RUP-GMSM03', description: 'Generation Meter Box (Extended)',            size: '750W × 550H × 350D mm' },
 ];
 
 // ── 7. Agriculture Box ────────────────────────────────────────────────────────
