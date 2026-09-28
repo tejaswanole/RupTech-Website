@@ -62,7 +62,7 @@ export default function QuotePageClient() {
                 <div className="text-center py-xl">
                   <CheckCircle size={64} className="text-primary mx-auto mb-md" />
                   <h3 className="font-headline-md text-headline-md text-on-surface mb-sm">Quote Request Submitted!</h3>
-                  <p className="font-body-md text-body-md text-on-surface-variant max-w-md mx-auto">
+                  <p className="font-body-md text-body-md text-on-surface-variant max-w-[28rem] mx-auto">
                     Thank you. Our team will review your requirements and send a quotation to <strong>{form.email}</strong> within 24 hours.
                   </p>
                 </div>

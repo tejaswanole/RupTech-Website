@@ -114,7 +114,7 @@ export default function ManufacturingPage() {
                 <h3 className={`${i === 0 ? 'font-headline-md text-headline-md' : 'font-headline-sm text-headline-sm'} text-white`}>
                   {machine.name}
                 </h3>
-                <p className="font-body-sm text-body-sm text-surface-container-high mt-xs max-w-md">
+                <p className="font-body-sm text-body-sm text-surface-container-high mt-xs max-w-[28rem]">
                   {machine.description}
                 </p>
               </div>

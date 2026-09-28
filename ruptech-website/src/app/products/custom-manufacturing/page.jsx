@@ -93,7 +93,7 @@ export default function CustomManufacturingPage() {
           <h3 className="font-headline-md text-headline-md text-inverse-on-surface mb-sm">
             Ready to Start Your OEM Project?
           </h3>
-          <p className="font-body-md text-body-md text-surface-variant mb-lg max-w-xl mx-auto">
+          <p className="font-body-md text-body-md text-surface-variant mb-lg max-w-2xl mx-auto">
             Upload your drawings and receive a detailed quotation within 24 hours. All files handled under strict NDA.
           </p>
           <CTAButton href="/quote" size="lg">Submit an RFQ Now</CTAButton>
