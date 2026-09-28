@@ -1,19 +1,19 @@
 import { MessageCircle } from 'lucide-react';
+import Image from 'next/image';
 import SpecTable from '@/components/SpecTable';
-import CTAButton from '@/components/CTAButton';
 import { cableTrays } from '@/lib/productData';
 import { BUSINESS } from '@/lib/constants';
 
 export const metadata = {
   title: 'Cable Management Systems',
   description:
-    'Ruptech Engineers\' range of perforated cable trays, cable ladders, and accessories — galvanized mild steel, available in standard and custom sizes.',
+    'Ruptech Engineers\' range of G.I. perforated cable trays with cover — 14 standard sizes from 50W×25H to 400W×75H mm, 2500mm standard length. Custom sizes available.',
 };
 
 const specCols = [
   { key: 'code', label: 'Product Code', className: 'text-primary font-bold' },
   { key: 'description', label: 'Description' },
-  { key: 'size', label: 'Width × Height' },
+  { key: 'size', label: 'Width × Height × Length' },
   { key: 'material', label: 'Material' },
 ];
 
@@ -26,9 +26,9 @@ export default function CableManagementPage() {
         <div className="max-w-container-max mx-auto px-gutter">
           <h1 className="font-headline-xl text-headline-xl text-primary mb-sm">Cable Management Systems</h1>
           <p className="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">
-            Robust perforated cable trays and heavy-duty cable ladders designed for secure, organized electrical
-            routing in industrial and commercial installations. All trays are available in hot-dip galvanized M.S.
-            finish for corrosion resistance.
+            G.I. (Galvanized Iron) perforated cable trays with cover — 14 standard sizes available for organized,
+            safe cable routing in industrial and commercial installations. Standard piece length: 2500mm.
+            Custom widths and heights manufactured to order.
           </p>
         </div>
       </header>
@@ -37,32 +37,47 @@ export default function CableManagementPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-lg">
           <div className="lg:col-span-8">
             <h2 className="font-headline-md text-headline-md text-on-surface mb-md">
-              Perforated Cable Trays & Ladders — Specifications
+              G.I. Cable Tray with Cover — Specifications
             </h2>
             <SpecTable rows={cableTrays} columns={specCols} />
             <div className="mt-md p-md bg-surface-container-low border border-outline-variant rounded">
-              <h4 className="font-headline-sm text-headline-sm text-on-surface mb-sm">Accessories Available</h4>
+              <h4 className="font-headline-sm text-headline-sm text-on-surface mb-sm">Accessories & Hardware</h4>
               <ul className="font-body-sm text-body-sm text-on-surface-variant space-y-xs list-disc list-inside">
+                <li>Cable Tray Covers (matching widths)</li>
                 <li>Straight couplers, bends (90°, 45°), tee sections</li>
                 <li>Reducers, crosses, and end caps</li>
                 <li>Mounting brackets and holding clamps</li>
                 <li>Fish plates (splice plates) for tray joints</li>
-                <li>Standard length: 2.5m / 3m per piece</li>
+                <li>Standard piece length: 2500mm</li>
               </ul>
             </div>
           </div>
 
           <div className="lg:col-span-4 space-y-md">
             <div className="p-md bg-surface-container-low border border-outline-variant rounded-lg">
+              <h3 className="font-headline-sm text-headline-sm text-on-surface mb-sm">Product Photo</h3>
+              <div className="aspect-video relative rounded border border-outline-variant overflow-hidden bg-surface-container group">
+                <Image
+                  src="/images/products/cable-trays/cable_tray_0.webp"
+                  alt="G.I. Cable Tray with Cover"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 400px"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+
+            <div className="p-md bg-surface-container-low border border-outline-variant rounded-lg">
               <h4 className="font-headline-sm text-headline-sm text-primary mb-xs">Key Features</h4>
               <ul className="font-body-sm text-body-sm text-on-surface-variant space-y-sm">
                 {[
-                  'Hot-dip galvanized M.S. finish',
-                  'Perforations for cable tie-down',
-                  '20% weight reduction vs solid tray',
-                  'Corrosion resistant coating',
-                  'Custom widths & depths available',
-                  'Compatible with all accessories',
+                  'G.I. (Galvanized Iron) material',
+                  'Includes matching cover',
+                  'Standard length: 2500mm per piece',
+                  'Sizes from 50W to 400W mm',
+                  'Heights: 25mm and 75mm options',
+                  'Custom widths & heights available',
                 ].map((f) => (
                   <li key={f} className="flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
