@@ -2,12 +2,14 @@ import ClientLogoGrid from '@/components/ClientLogoGrid';
 import TestimonialCard from '@/components/TestimonialCard';
 import CTAButton from '@/components/CTAButton';
 import { CLIENTS } from '@/lib/constants';
+import { pageMeta } from '@/lib/seo';
 
-export const metadata = {
+export const metadata = pageMeta({
   title: 'Our Clients & Testimonials',
   description:
     'Ruptech Engineers is trusted by leading names across power, electrical, and manufacturing sectors — CG Power, Schneider Electric, L&T, Exide, ISMT, and more.',
-};
+  path: '/clients',
+});
 
 const caseStudies = [
   {

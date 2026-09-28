@@ -1,117 +1,50 @@
-'use client';
-import { useState } from 'react';
 import Image from 'next/image';
-import { MessageCircle, ImageOff } from 'lucide-react';
-import SpecTable from '@/components/SpecTable';
+import Breadcrumbs from '@/components/Breadcrumbs';
 import CTAButton from '@/components/CTAButton';
-import { panelEnclosures } from '@/lib/productData';
-import { whatsappLink } from '@/lib/constants';
+import { pageMeta } from '@/lib/seo';
+import PanelEnclosuresClient from './PanelEnclosuresClient';
 
-const tabs = [
-  { key: 'combiBox',           label: 'MCB + Socket (Combi) Box' },
-  { key: 'evChargerBox',       label: 'EV Charger Boxes' },
-  { key: 'mcbBox',             label: 'MCCB Boxes' },
-  { key: 'distributionBox',    label: 'Distribution Boxes' },
-  { key: 'meterBox',           label: 'Meter Boxes' },
-  { key: 'generationMeterBox', label: 'Generation Meter Boxes' },
-  { key: 'agricultureBox',     label: 'Agriculture Boxes' },
-  { key: 'panelBox',           label: 'Panel Boxes' },
+export const metadata = pageMeta({
+  title: 'Panel Enclosures & Boxes',
+  description:
+    'M.S. distribution boxes, MCCB boxes, meter boxes, EV charger boxes, agriculture boxes and panel boxes from Ruptech Engineers, MIDC Ahmednagar. Catalogue sizes and custom dimensions.',
+  path: '/products/panel-enclosures',
+});
+
+// Products we build to order; no standard catalogue sizes yet.
+const madeToOrder = [
+  {
+    name: 'APFC Panel',
+    desc: 'Automatic power factor correction panel enclosures, floor-standing, multi-door.',
+    src: '/images/products/apfc-panel/apfc_panel_0.webp',
+  },
+  {
+    name: 'Feeder Pillar',
+    desc: 'Outdoor feeder pillar enclosures with rain canopy and lockable doors.',
+    src: '/images/products/feeder-pillar/feeder_pillar_0.webp',
+  },
+  {
+    name: 'Bus Bar Box',
+    desc: 'Bus bar chambers with copper bar mounting and incoming switch provision.',
+    src: '/images/products/bus-bar-box/bus_bar_box_0.webp',
+  },
+  {
+    name: 'Junction Box',
+    desc: 'Compact M.S. junction boxes with knockouts for cable entry.',
+    src: '/images/products/junction-box/junction_box_0.webp',
+  },
 ];
 
-/**
- * Gallery images per tab.
- * ─────────────────────────────────────────────────────────────────────────────
- * HOW TO ADD YOUR REAL PRODUCT PHOTOS:
- *
- * 1. Run:  python optimize_images.py
- *    (This converts your JPG/PNG → WebP and creates thumbnails automatically)
- *
- * 2. Drop the WebP files into the matching folder:
- *      /public/images/products/panel-enclosures/
- *      /public/images/products/distribution-box/
- *      /public/images/products/meter-box/  ... etc.
- *
- * 3. Update the `src` values below with your actual filenames:
- *      src: '/images/products/distribution-box/db-600x800.webp'
- *
- * ─────────────────────────────────────────────────────────────────────────────
- */
-const galleryImages = {
-  combiBox: [
-    { src: '/images/products/panel-enclosures/mcb_plus_clad_socket_box_0.webp',  alt: 'AC Box 3 Way SP MCB Metal Socket' },
-  ],
-  evChargerBox: [
-    { src: '/images/products/ev-charger-box/ev_charger_box_1.webp', alt: 'EV Charger Box, front with door closed' },
-    { src: '/images/products/ev-charger-box/ev_charger_box_2.webp', alt: 'EV Charger Box with door open' },
-    { src: '/images/products/ev-charger-box/ev_charger_box_0.webp', alt: 'EV Charger Box, side with ventilation grille' },
-  ],
-  mcbBox: [
-    { src: '/images/products/mcb-box/mccb_box_0.webp', alt: 'MCCB Box' },
-    { src: '/images/products/mcb-box/mcb_box_0.webp',  alt: '3 Way MCB Box' },
-  ],
-  distributionBox: [
-    { src: '/images/products/distribution-box/mseb_box_0.webp',   alt: 'M.S. Distribution Box 800W×800H' },
-    { src: '/images/products/distribution-box/mseb_box_1.webp',   alt: '100A Double Circuit MSEB Box' },
-  ],
-  meterBox: [
-    { src: '/images/products/meter-box/meter_boxsinglethree_0.webp', alt: 'Single Phase Energy Meter Box' },
-    { src: '/images/products/meter-box/meter_boxsinglethree_1.webp', alt: 'Three Phase Energy Meter Box' },
-  ],
-  generationMeterBox: [
-    { src: '/images/products/generation-meter-box/generation_meter_box_0.webp', alt: 'Double Door Generation Meter Box' },
-    { src: '/images/products/generation-meter-box/generation_meter_box_1.webp', alt: 'Generation Meter Box 500x1000' },
-    { src: '/images/products/generation-meter-box/generation_meter_box_2.webp', alt: 'Generation Meter Box 600x600' },
-  ],
-  agricultureBox: [
-    { src: '/images/products/agriculture-box/agriculture_box_0.webp',  alt: 'Agriculture Box' },
-  ],
-  panelBox: [
-    { src: '/images/products/panel-box/panel_box_0.webp',  alt: 'Single Door Panel Box' },
-  ],
-};
-
-/** Renders one gallery image with graceful fallback if file not yet added */
-function ProductImage({ src, alt }) {
-  const [error, setError] = useState(false);
-
-  if (error) {
-    return (
-      <div className="aspect-square bg-surface-container border border-dashed border-outline-variant rounded flex flex-col items-center justify-center gap-xs">
-        <ImageOff size={20} className="text-outline" />
-        <span className="font-label-caps text-label-caps text-outline text-[10px] text-center px-1 leading-tight">{alt}</span>
-      </div>
-    );
-  }
-
-  return (
-    <div className="aspect-square relative rounded border border-outline-variant overflow-hidden bg-surface-container group">
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        sizes="(max-width: 768px) 50vw, 200px"
-        className="object-cover group-hover:scale-105 transition-transform duration-500"
-        onError={() => setError(true)}
-        loading="lazy"
-      />
-    </div>
-  );
-}
-
 export default function PanelEnclosuresPage() {
-  const [activeTab, setActiveTab] = useState('distributionBox');
-  const waUrl = whatsappLink('Hello! I am interested in Panel Enclosures & Boxes. Please share pricing details.');
-
-  const specCols = [
-    { key: 'code',        label: 'Product Code', className: 'w-1/4 text-primary font-bold' },
-    { key: 'description', label: 'Description',  className: 'w-1/2' },
-    { key: 'size',        label: 'Dimensions',   className: 'w-1/4' },
-  ];
-
-  const images = galleryImages[activeTab] || [];
-
   return (
     <>
+      <Breadcrumbs
+        items={[
+          { label: 'Products', href: '/products' },
+          { label: 'Panel Enclosures & Boxes', href: '/products/panel-enclosures' },
+        ]}
+      />
+
       {/* Header */}
       <header className="bg-surface-container-lowest py-xl border-b border-outline-variant">
         <div className="max-w-container-max mx-auto px-gutter">
@@ -131,106 +64,47 @@ export default function PanelEnclosuresPage() {
               </div>
             </div>
 
-            {/* Hero image — replace src with your best product photo */}
             <div className="relative h-64 md:h-72 rounded-lg overflow-hidden border border-outline-variant bg-surface-container-low">
               <Image
-                src="/images/products/panel-enclosures/hero.webp"
-                alt="Ruptech Panel Enclosures and Electrical Boxes"
+                src="/images/products/distribution-box/mseb_box_1.webp"
+                alt="100A double circuit M.S. distribution box with bus bars, door open"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
                 priority
-                onError={(e) => { e.currentTarget.style.display = 'none'; }}
               />
             </div>
           </div>
         </div>
       </header>
 
-      {/* Main Content */}
-      <main className="max-w-container-max mx-auto px-gutter py-xl">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-lg">
+      <div className="max-w-container-max mx-auto px-gutter py-xl space-y-xl">
+        <PanelEnclosuresClient />
 
-          {/* Specs + Tabs */}
-          <div className="lg:col-span-8 space-y-lg">
-            {/* Tabs */}
-            <div className="flex overflow-x-auto gap-md border-b border-outline-variant mb-lg pb-sm no-scrollbar">
-              {tabs.map((tab) => (
-                <button
-                  key={tab.key}
-                  id={`tab-${tab.key}`}
-                  onClick={() => setActiveTab(tab.key)}
-                  className={`font-label-caps text-label-caps pb-sm whitespace-nowrap px-xs transition-colors ${
-                    activeTab === tab.key
-                      ? 'text-primary border-b-2 border-primary'
-                      : 'text-on-surface-variant hover:text-primary'
-                  }`}
-                >
-                  {tab.label}
-                </button>
-              ))}
-            </div>
-
-            <section>
-              <h2 className="font-headline-md text-headline-md text-on-surface mb-md">Technical Specifications</h2>
-              <SpecTable rows={panelEnclosures[activeTab] || []} columns={specCols} />
-              <p className="mt-sm font-body-sm text-body-sm text-on-surface-variant">
-                * Dimensions sourced from Ruptech All Catalogue. Material: M.S. (Mild Steel) / CRCA / HRCA.
-                Finish: In-house Powder Coated. Custom dimensions available on request.
-              </p>
-            </section>
+        {/* Made to order */}
+        <section>
+          <h2 className="font-headline-lg text-headline-lg text-on-surface mb-xs">Made to Order</h2>
+          <p className="font-body-md text-body-md text-on-surface-variant mb-md">
+            Built to your drawing or specification. Share your requirements for sizes and a quotation.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-md">
+            {madeToOrder.map((item) => (
+              <div key={item.name} className="border border-outline-variant rounded-lg overflow-hidden bg-surface-container-lowest flex flex-col">
+                <div className="relative aspect-[4/3] bg-surface-container">
+                  <Image src={item.src} alt={item.name} fill sizes="(max-width: 640px) 100vw, 25vw" className="object-cover" />
+                </div>
+                <div className="p-md flex-grow">
+                  <h3 className="font-headline-sm text-headline-sm text-on-surface mb-xs">{item.name}</h3>
+                  <p className="font-body-sm text-body-sm text-on-surface-variant">{item.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
-
-          {/* Sidebar — Gallery + CTA */}
-          <div className="lg:col-span-4 space-y-md">
-            <h3 className="font-headline-sm text-headline-sm text-on-surface mb-sm">
-              Product Photos
-              <span className="ml-2 font-body-sm text-body-sm text-on-surface-variant font-normal">
-                ({tabs.find(t => t.key === activeTab)?.label})
-              </span>
-            </h3>
-
-            {images.length > 0 ? (
-              <div className="grid grid-cols-2 gap-sm">
-                {images.map((img) => (
-                  <ProductImage key={img.src} src={img.src} alt={img.alt} />
-                ))}
-              </div>
-            ) : (
-              <div className="border border-dashed border-outline-variant rounded p-md text-center">
-                <ImageOff size={24} className="text-outline mx-auto mb-xs" />
-                <p className="font-body-sm text-body-sm text-on-surface-variant">
-                  No photos yet for this category. Add WebP images to<br />
-                  <code className="text-xs text-primary">/public/images/products/</code>
-                </p>
-              </div>
-            )}
-
-            <div className="mt-lg p-md bg-surface-container-low border border-outline-variant rounded-lg">
-              <h4 className="font-headline-sm text-headline-sm text-primary mb-xs">Need a Custom Size?</h4>
-              <p className="font-body-sm text-body-sm text-on-surface-variant mb-md">
-                We offer bespoke engineering solutions tailored to your specific dimensional and environmental
-                requirements.
-              </p>
-              <div className="flex flex-col gap-sm">
-                <CTAButton href="/quote" className="w-full">Request a Quote</CTAButton>
-                {waUrl && (
-                  <a
-                    href={waUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    id="panel-whatsapp-btn"
-                    className="w-full flex justify-center items-center gap-sm font-label-caps text-label-caps px-md py-sm bg-[#25D366] text-white hover:bg-[#1ebe5e] rounded transition-colors"
-                  >
-                    <MessageCircle size={18} />
-                    WhatsApp Us
-                  </a>
-                )}
-              </div>
-            </div>
+          <div className="mt-md">
+            <CTAButton href="/quote">Request a Quote</CTAButton>
           </div>
-        </div>
-      </main>
+        </section>
+      </div>
     </>
   );
 }

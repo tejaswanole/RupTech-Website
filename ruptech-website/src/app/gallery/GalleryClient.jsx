@@ -50,7 +50,7 @@ export default function GalleryPageClient() {
         </div>
       </section>
 
-      <main className="max-w-container-max mx-auto px-gutter py-xl">
+      <div className="max-w-container-max mx-auto px-gutter py-xl">
         {/* Filter Tabs */}
         <div className="flex overflow-x-auto gap-sm no-scrollbar mb-lg border-b border-outline-variant pb-sm">
           {filters.map((f) => (
@@ -104,7 +104,7 @@ export default function GalleryPageClient() {
             No items in this category yet.
           </div>
         )}
-      </main>
+      </div>
     </>
   );
 }

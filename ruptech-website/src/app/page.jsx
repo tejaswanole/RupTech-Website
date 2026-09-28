@@ -4,12 +4,61 @@ import StatsBar from '@/components/StatsBar';
 import ProductCard from '@/components/ProductCard';
 import ClientLogoGrid from '@/components/ClientLogoGrid';
 import CTAButton from '@/components/CTAButton';
-import { whatsappLink, phoneLink } from '@/lib/constants';
+import { BUSINESS, SITE_URL, whatsappLink, phoneLink } from '@/lib/constants';
+import { pageMeta } from '@/lib/seo';
+import JsonLd from '@/components/JsonLd';
 
-export const metadata = {
+const homeMeta = pageMeta({
   title: 'Complete Sheet Metal Product Solutions',
   description:
     'Ruptech Engineers — Precision manufacturer of electrical panel enclosures, cable trays, industrial storage, and custom sheet metal solutions in Ahmednagar, MIDC.',
+  path: '/',
+});
+
+export const metadata = {
+  ...homeMeta,
+  title: { absolute: `${BUSINESS.shortName} | ${BUSINESS.tagline}` },
+};
+
+const localBusiness = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': `${SITE_URL}/#business`,
+  name: BUSINESS.name,
+  alternateName: BUSINESS.shortName,
+  slogan: BUSINESS.tagline,
+  url: SITE_URL,
+  logo: `${SITE_URL}/logo.png`,
+  image: `${SITE_URL}/opengraph-image.jpg`,
+  email: BUSINESS.email,
+  ...(BUSINESS.phone && { telephone: BUSINESS.phone }),
+  foundingDate: String(BUSINESS.established),
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Plot No. L-237, MIDC',
+    addressLocality: 'Ahmednagar',
+    addressRegion: 'Maharashtra',
+    postalCode: '414111',
+    addressCountry: 'IN',
+  },
+  location: BUSINESS.addresses.map((addr) => ({
+    '@type': 'Place',
+    name: `${BUSINESS.shortName} ${addr.label}`,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: addr.line1,
+      addressLocality: 'Ahmednagar',
+      addressRegion: 'Maharashtra',
+      postalCode: '414111',
+      addressCountry: 'IN',
+    },
+  })),
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    opens: '09:00',
+    closes: '18:00',
+  },
 };
 
 const productCategories = [
@@ -73,6 +122,8 @@ export default function HomePage() {
 
   return (
     <>
+      <JsonLd data={localBusiness} />
+
       {/* Hero */}
       <section className="relative h-[80vh] min-h-[600px] flex items-center bg-inverse-surface overflow-hidden">
         {/* Background overlay */}

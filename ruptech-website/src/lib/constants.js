@@ -1,3 +1,5 @@
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ruptechengineers.com';
+
 export const BUSINESS = {
   name: 'Ruptech Engineers Pvt. Ltd.',
   shortName: 'Ruptech Engineers',

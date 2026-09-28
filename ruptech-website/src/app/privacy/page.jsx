@@ -1,14 +1,17 @@
-export const metadata = {
+import { pageMeta } from '@/lib/seo';
+
+export const metadata = pageMeta({
   title: 'Privacy Policy',
   description: 'Privacy Policy for Ruptech Engineers Pvt. Ltd. website.',
-};
+  path: '/privacy',
+});
 
 export default function PrivacyPage() {
   return (
     <article className="max-w-4xl mx-auto px-gutter py-xl space-y-lg">
       <header>
         <h1 className="font-headline-xl text-headline-xl text-on-surface mb-sm">Privacy Policy</h1>
-        <p className="font-body-sm text-body-sm text-on-surface-variant">Last updated: January 2025</p>
+        <p className="font-body-sm text-body-sm text-on-surface-variant">Last updated: September 2026</p>
       </header>
 
       {[

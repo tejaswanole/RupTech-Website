@@ -1,6 +1,10 @@
 import Link from 'next/link';
 import { Home } from 'lucide-react';
 
+export const metadata = {
+  title: 'Page Not Found',
+};
+
 export default function NotFound() {
   return (
     <div className="min-h-[70vh] flex flex-col items-center justify-center px-gutter text-center bg-surface-container-low">

@@ -2,12 +2,14 @@ import { Shield, Settings, Handshake, CheckCircle, Calendar, Building2, Trending
 import ClientLogoGrid from '@/components/ClientLogoGrid';
 import CTAButton from '@/components/CTAButton';
 import StatsBar from '@/components/StatsBar';
+import { pageMeta } from '@/lib/seo';
 
-export const metadata = {
+export const metadata = pageMeta({
   title: 'About Us',
   description:
     'Learn about Ruptech Engineers — our story, infrastructure, quality commitment, and why we are the preferred partner for sheet metal manufacturing in Maharashtra.',
-};
+  path: '/about',
+});
 
 const keyFacts = [
   { icon: Calendar, label: 'Year Established', value: '2019', sub: 'Ahmednagar, Maharashtra' },

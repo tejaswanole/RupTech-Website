@@ -1,8 +1,13 @@
+import { SITE_URL } from '@/lib/constants';
+
 export const dynamic = 'force-static';
 
+// Update when page content changes, so search engines are not told every page changed on each deploy.
+const LAST_UPDATED = '2026-09-28';
+
 export default function sitemap() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.ruptechengineers.com';
-  const now = new Date().toISOString();
+  const baseUrl = SITE_URL;
+  const now = LAST_UPDATED;
 
   return [
     { url: baseUrl, lastModified: now, changeFrequency: 'weekly', priority: 1 },

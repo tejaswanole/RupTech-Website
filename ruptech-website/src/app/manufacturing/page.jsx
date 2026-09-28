@@ -1,12 +1,14 @@
 import { Factory } from 'lucide-react';
 import CTAButton from '@/components/CTAButton';
 import { machines, processSteps } from '@/lib/productData';
+import { pageMeta } from '@/lib/seo';
 
-export const metadata = {
+export const metadata = pageMeta({
   title: 'Manufacturing Infrastructure',
   description:
     'Explore Ruptech Engineers\' state-of-the-art manufacturing facility in MIDC Ahmednagar — CNC laser cutting, press brake bending, MIG/TIG welding, and powder coating.',
-};
+  path: '/manufacturing',
+});
 
 const facilitySections = [
   {

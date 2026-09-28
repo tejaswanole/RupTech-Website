@@ -3,7 +3,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
-import { BUSINESS } from '@/lib/constants';
+import { BUSINESS, SITE_URL } from '@/lib/constants';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -30,16 +30,14 @@ export const metadata = {
     'Ahmednagar manufacturer',
     'Ruptech Engineers',
   ],
-  metadataBase: new URL('https://www.ruptechengineers.com'),
+  metadataBase: new URL(SITE_URL),
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: 'https://www.ruptechengineers.com',
     siteName: BUSINESS.name,
     title: `${BUSINESS.name} — ${BUSINESS.tagline}`,
     description:
       'Precision manufacturer of electrical panel enclosures, cable management, and industrial storage solutions. MIDC Ahmednagar, Maharashtra.',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: `${BUSINESS.name}` }],
   },
   twitter: {
     card: 'summary_large_image',

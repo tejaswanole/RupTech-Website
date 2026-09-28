@@ -174,13 +174,15 @@ export default function ContactPageClient() {
         </div>
       </section>
 
-      {/* Map placeholder */}
-      <section className="border-t border-outline-variant h-72 w-full relative bg-surface-container-high flex items-center justify-center">
-        <div className="text-center text-outline opacity-50">
-          <MapPin size={48} className="mx-auto mb-2" />
-          <p className="font-label-caps text-label-caps">MIDC Ahmednagar, Maharashtra, India</p>
-          <p className="font-body-sm text-body-sm mt-1">Google Maps embed — add iframe with API key</p>
-        </div>
+      {/* Map */}
+      <section className="border-t border-outline-variant h-80 w-full bg-surface-container-high">
+        <iframe
+          title="Ruptech Engineers location, MIDC Ahmednagar"
+          src="https://maps.google.com/maps?q=MIDC%20Ahmednagar%20Maharashtra%20414111&z=14&output=embed"
+          className="w-full h-full border-0"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
       </section>
     </>
   );

@@ -4,12 +4,15 @@ import { storageRacks } from '@/lib/productData';
 import { whatsappLink } from '@/lib/constants';
 import { MessageCircle } from 'lucide-react';
 import Image from 'next/image';
+import { pageMeta } from '@/lib/seo';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
-export const metadata = {
+export const metadata = pageMeta({
   title: 'Industrial Storage Solutions',
   description:
     'Industrial storage racks manufactured by Ruptech Engineers — Single Slotted Angle Rack, Super Shop/Mall Rack, and Hardware Rack. Mild Steel, customized sizes available.',
-};
+  path: '/products/industrial-storage',
+});
 
 const specCols = [
   { key: 'code', label: 'Code', className: 'text-primary font-bold' },
@@ -24,6 +27,13 @@ export default function IndustrialStoragePage() {
 
   return (
     <>
+      <Breadcrumbs
+        items={[
+          { label: 'Products', href: '/products' },
+          { label: 'Industrial Storage', href: '/products/industrial-storage' },
+        ]}
+      />
+
       <header className="bg-surface-container-lowest py-xl border-b border-outline-variant">
         <div className="max-w-container-max mx-auto px-gutter">
           <h1 className="font-headline-xl text-headline-xl text-primary mb-sm">Industrial Storage Racks</h1>
@@ -34,7 +44,7 @@ export default function IndustrialStoragePage() {
         </div>
       </header>
 
-      <main className="max-w-container-max mx-auto px-gutter py-xl space-y-lg">
+      <div className="max-w-container-max mx-auto px-gutter py-xl space-y-lg">
         {/* Spec Table */}
         <section>
           <h2 className="font-headline-md text-headline-md text-on-surface mb-md">Storage Rack Specifications</h2>
@@ -86,7 +96,7 @@ export default function IndustrialStoragePage() {
             )}
           </div>
         </section>
-      </main>
+      </div>
     </>
   );
 }

@@ -51,7 +51,7 @@ export default function QuotePageClient() {
         </div>
       </section>
 
-      <main className="max-w-container-max mx-auto px-gutter py-xl">
+      <div className="max-w-container-max mx-auto px-gutter py-xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-lg">
           {/* RFQ Form */}
           <div className="lg:col-span-8">
@@ -191,7 +191,7 @@ export default function QuotePageClient() {
             )}
           </div>
         </div>
-      </main>
+      </div>
     </>
   );
 }

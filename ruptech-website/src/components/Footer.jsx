@@ -8,6 +8,7 @@ const quickLinks = [
   { label: 'About Us', href: '/about' },
   { label: 'Products', href: '/products' },
   { label: 'Manufacturing', href: '/manufacturing' },
+  { label: 'Contact Us', href: '/contact' },
 ];
 
 const resourceLinks = [

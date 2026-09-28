@@ -1,12 +1,15 @@
 import CTAButton from '@/components/CTAButton';
 import { MessageCircle, Scissors, CircleDot, ArrowUpDown, Ruler, GitMerge, PaintBucket, CheckCircle } from 'lucide-react';
 import { whatsappLink } from '@/lib/constants';
+import { pageMeta } from '@/lib/seo';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
-export const metadata = {
+export const metadata = pageMeta({
   title: 'Sheet Metal Fabrication Services',
   description:
     'Precision sheet metal fabrication services — CNC laser cutting, turret punching, press brake bending, MIG/TIG welding, and powder coating from Ruptech Engineers, Ahmednagar.',
-};
+  path: '/products/sheet-metal-fabrication',
+});
 
 const fabricationServices = [
   {
@@ -54,6 +57,13 @@ export default function SheetMetalFabricationPage() {
 
   return (
     <>
+      <Breadcrumbs
+        items={[
+          { label: 'Products', href: '/products' },
+          { label: 'Sheet Metal Fabrication', href: '/products/sheet-metal-fabrication' },
+        ]}
+      />
+
       {/* Header */}
       <header className="bg-surface-container-lowest py-xl border-b border-outline-variant">
         <div className="max-w-container-max mx-auto px-gutter">
@@ -65,7 +75,7 @@ export default function SheetMetalFabricationPage() {
         </div>
       </header>
 
-      <main className="max-w-container-max mx-auto px-gutter py-xl space-y-xl">
+      <div className="max-w-container-max mx-auto px-gutter py-xl space-y-xl">
 
         {/* ── Capabilities Grid ── */}
         <section>
@@ -146,7 +156,7 @@ export default function SheetMetalFabricationPage() {
           </div>
         </section>
 
-      </main>
+      </div>
     </>
   );
 }

@@ -4,12 +4,15 @@ import SpecTable from '@/components/SpecTable';
 import { cableTrays } from '@/lib/productData';
 import { whatsappLink } from '@/lib/constants';
 import CTAButton from '@/components/CTAButton';
+import { pageMeta } from '@/lib/seo';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
-export const metadata = {
+export const metadata = pageMeta({
   title: 'Cable Management Systems',
   description:
     'Ruptech Engineers\' range of G.I. perforated cable trays with cover — 14 standard sizes from 50W×25H to 400W×75H mm, 2500mm standard length. Custom sizes available.',
-};
+  path: '/products/cable-management',
+});
 
 const specCols = [
   { key: 'code', label: 'Product Code', className: 'text-primary font-bold' },
@@ -23,6 +26,13 @@ export default function CableManagementPage() {
 
   return (
     <>
+      <Breadcrumbs
+        items={[
+          { label: 'Products', href: '/products' },
+          { label: 'Cable Management', href: '/products/cable-management' },
+        ]}
+      />
+
       <header className="bg-surface-container-lowest py-xl border-b border-outline-variant">
         <div className="max-w-container-max mx-auto px-gutter">
           <h1 className="font-headline-xl text-headline-xl text-primary mb-sm">Cable Management Systems</h1>
@@ -34,7 +44,7 @@ export default function CableManagementPage() {
         </div>
       </header>
 
-      <main className="max-w-container-max mx-auto px-gutter py-xl">
+      <div className="max-w-container-max mx-auto px-gutter py-xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-lg">
           <div className="lg:col-span-8">
             <h2 className="font-headline-md text-headline-md text-on-surface mb-md">
@@ -110,7 +120,7 @@ export default function CableManagementPage() {
             </div>
           </div>
         </div>
-      </main>
+      </div>
     </>
   );
 }

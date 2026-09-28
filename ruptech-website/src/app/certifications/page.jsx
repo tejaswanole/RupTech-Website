@@ -1,11 +1,13 @@
 import CTAButton from '@/components/CTAButton';
-import { CheckCircle, Clock, Download } from 'lucide-react';
+import { CheckCircle, Clock } from 'lucide-react';
+import { pageMeta } from '@/lib/seo';
 
-export const metadata = {
+export const metadata = pageMeta({
   title: 'Certifications & Compliance',
   description:
     'Ruptech Engineers is committed to engineering quality and compliance — ISO 9001:2015 quality management, material traceability, and rigorous inspection standards.',
-};
+  path: '/certifications',
+});
 
 const certifications = [
   {
@@ -84,9 +86,6 @@ export default function CertificationsPage() {
                 Verified compliance across quality, safety, and environmental standards.
               </p>
             </div>
-            <button className="hidden md:flex items-center gap-2 px-md py-sm border border-outline-variant rounded font-label-caps text-label-caps text-on-surface-variant hover:text-primary hover:border-primary transition-colors">
-              <Download size={16} /> Download All (PDF)
-            </button>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
