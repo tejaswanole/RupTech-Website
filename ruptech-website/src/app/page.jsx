@@ -4,12 +4,61 @@ import StatsBar from '@/components/StatsBar';
 import ProductCard from '@/components/ProductCard';
 import ClientLogoGrid from '@/components/ClientLogoGrid';
 import CTAButton from '@/components/CTAButton';
-import { BUSINESS } from '@/lib/constants';
+import { BUSINESS, SITE_URL, whatsappLink, phoneLink } from '@/lib/constants';
+import { pageMeta } from '@/lib/seo';
+import JsonLd from '@/components/JsonLd';
 
-export const metadata = {
+const homeMeta = pageMeta({
   title: 'Complete Sheet Metal Product Solutions',
   description:
     'Ruptech Engineers — Precision manufacturer of electrical panel enclosures, cable trays, industrial storage, and custom sheet metal solutions in Ahmednagar, MIDC.',
+  path: '/',
+});
+
+export const metadata = {
+  ...homeMeta,
+  title: { absolute: `${BUSINESS.shortName} | ${BUSINESS.tagline}` },
+};
+
+const localBusiness = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': `${SITE_URL}/#business`,
+  name: BUSINESS.name,
+  alternateName: BUSINESS.shortName,
+  slogan: BUSINESS.tagline,
+  url: SITE_URL,
+  logo: `${SITE_URL}/logo.png`,
+  image: `${SITE_URL}/opengraph-image.jpg`,
+  email: BUSINESS.email,
+  ...(BUSINESS.phone && { telephone: BUSINESS.phone }),
+  foundingDate: String(BUSINESS.established),
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Plot No. L-237, MIDC',
+    addressLocality: 'Ahmednagar',
+    addressRegion: 'Maharashtra',
+    postalCode: '414111',
+    addressCountry: 'IN',
+  },
+  location: BUSINESS.addresses.map((addr) => ({
+    '@type': 'Place',
+    name: `${BUSINESS.shortName} ${addr.label}`,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: addr.line1,
+      addressLocality: 'Ahmednagar',
+      addressRegion: 'Maharashtra',
+      postalCode: '414111',
+      addressCountry: 'IN',
+    },
+  })),
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    opens: '09:00',
+    closes: '18:00',
+  },
 };
 
 const productCategories = [
@@ -69,10 +118,12 @@ const whyChooseUs = [
 ];
 
 export default function HomePage() {
-  const waUrl = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent(BUSINESS.whatsappMessage)}`;
+  const waUrl = whatsappLink();
 
   return (
     <>
+      <JsonLd data={localBusiness} />
+
       {/* Hero */}
       <section className="relative h-[80vh] min-h-[600px] flex items-center bg-inverse-surface overflow-hidden">
         {/* Background overlay */}
@@ -80,7 +131,7 @@ export default function HomePage() {
           className="absolute inset-0 z-0 opacity-30 mix-blend-overlay"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1600&q=80')",
+              "url('/images/products/bus-bar-box/bus_bar_box_0.webp')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -110,12 +161,14 @@ export default function HomePage() {
               <CTAButton href="/quote" size="lg" className="text-on-primary">
                 Request a Quote
               </CTAButton>
-              <a
-                href={`tel:${BUSINESS.phone}`}
-                className="bg-transparent border border-surface-container-lowest text-surface-container-lowest font-label-caps text-label-caps px-lg py-sm rounded hover:bg-surface-container-lowest/10 transition-colors flex items-center gap-2"
-              >
-                <Phone size={16} /> Call Us
-              </a>
+              {phoneLink && (
+                <a
+                  href={phoneLink}
+                  className="bg-transparent border border-surface-container-lowest text-surface-container-lowest font-label-caps text-label-caps px-lg py-sm rounded hover:bg-surface-container-lowest/10 active:scale-[0.97] transition flex items-center gap-2"
+                >
+                  <Phone size={16} /> Call Us
+                </a>
+              )}
             </div>
           </div>
         </div>
@@ -192,14 +245,16 @@ export default function HomePage() {
           </p>
           <div className="flex flex-wrap gap-sm justify-center">
             <CTAButton href="/quote" size="lg">Request a Quote</CTAButton>
-            <a
-              href={waUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#25D366] text-white font-label-caps text-label-caps px-lg py-sm rounded hover:bg-[#1ebe5e] transition-colors flex items-center gap-2"
-            >
-              WhatsApp Us
-            </a>
+            {waUrl && (
+              <a
+                href={waUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#25D366] text-white font-label-caps text-label-caps px-lg py-sm rounded hover:bg-[#1ebe5e] active:scale-[0.97] transition flex items-center gap-2"
+              >
+                WhatsApp Us
+              </a>
+            )}
           </div>
         </div>
       </section>

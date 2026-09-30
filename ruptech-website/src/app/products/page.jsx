@@ -1,12 +1,13 @@
-import Link from 'next/link';
-import { ArrowRight, FileDown } from 'lucide-react';
+import { FileDown } from 'lucide-react';
 import ProductCard from '@/components/ProductCard';
+import { pageMeta } from '@/lib/seo';
 
-export const metadata = {
+export const metadata = pageMeta({
   title: 'Our Products',
   description:
     'Browse Ruptech Engineers\' complete range of sheet metal products — panel enclosures, cable management, industrial storage, and custom fabrication.',
-};
+  path: '/products',
+});
 
 const categories = [
   {
@@ -14,30 +15,35 @@ const categories = [
     description:
       'Customizable sheet metal enclosures for electrical panels, control systems, and industrial electronics, built to IP/NEMA standards.',
     href: '/products/panel-enclosures',
+    image: '/images/products/distribution-box/mseb_box_0.webp',
   },
   {
     title: 'Sheet Metal Fabrication',
     description:
       'Precision laser cutting, CNC bending, and welding services for high-tolerance industrial components and assemblies.',
     href: '/products/sheet-metal-fabrication',
+    image: '/images/products/generation-meter-box/generation_meter_box_0.webp',
   },
   {
     title: 'Cable Management',
     description:
       'Robust cable trays, ladders, and raceways designed for secure and organized industrial electrical routing.',
     href: '/products/cable-management',
+    image: '/images/products/cable-trays/cable_tray_0.webp',
   },
   {
     title: 'Industrial Storage',
     description:
       'Heavy-duty shelving, racks, and industrial cabinets engineered for maximum load capacity and operational efficiency.',
     href: '/products/industrial-storage',
+    image: '/images/products/storage-racks/slotted_angle_rack_0.webp',
   },
   {
     title: 'Custom Manufacturing',
     description:
       'Bespoke engineering solutions tailored to specific client requirements, from design prototyping to full-scale production.',
     href: '/products/custom-manufacturing',
+    image: '/images/products/agriculture-box/agriculture_box_0.webp',
   },
 ];
 

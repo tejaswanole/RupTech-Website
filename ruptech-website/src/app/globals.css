@@ -2,8 +2,8 @@
 
 @theme {
   /* Fonts */
-  --font-sans: 'Inter', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
 
   /* Brand Colors — Material Design 3 Teal palette */
   --color-primary: #006153;
@@ -16,7 +16,7 @@
   --color-on-primary-fixed-variant: #005145;
   --color-inverse-primary: #7bd7c3;
 
-  --color-secondary: #325f9b;
+  --color-secondary: #1d4e89;
   --color-on-secondary: #ffffff;
   --color-secondary-container: #93bdff;
   --color-on-secondary-container: #194b86;
@@ -72,54 +72,61 @@
   --spacing-gutter: 24px;
   --spacing-container-max: 1280px;
 
-  /* Border radius */
-  --radius: 0.125rem;
-  --radius-lg: 0.25rem;
-  --radius-xl: 0.5rem;
-  --radius-full: 0.75rem;
+  /* Border radius (DESIGN.md: 4px default, 8px large containers) */
+  --radius: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
 
   /* Typography */
-  --text-label-caps: 12px;
+  --text-label-caps: 0.75rem;
   --text-label-caps--line-height: 1;
   --text-label-caps--letter-spacing: 0.05em;
   --text-label-caps--font-weight: 700;
 
-  --text-body-sm: 14px;
+  --text-body-sm: 0.875rem;
   --text-body-sm--line-height: 1.5;
 
-  --text-body-md: 16px;
+  --text-body-md: 1rem;
   --text-body-md--line-height: 1.5;
 
-  --text-body-lg: 18px;
+  --text-body-lg: 1.125rem;
   --text-body-lg--line-height: 1.6;
 
-  --text-headline-sm: 18px;
+  --text-headline-sm: 1.125rem;
   --text-headline-sm--line-height: 1.4;
   --text-headline-sm--font-weight: 600;
 
-  --text-headline-md: 24px;
+  --text-headline-md: 1.5rem;
   --text-headline-md--line-height: 1.3;
   --text-headline-md--font-weight: 700;
 
-  --text-headline-lg: 32px;
+  --text-headline-lg: clamp(1.625rem, 1.25rem + 1.5vw, 2rem);
   --text-headline-lg--line-height: 1.2;
   --text-headline-lg--letter-spacing: -0.01em;
   --text-headline-lg--font-weight: 700;
 
-  --text-headline-xl: 48px;
+  /* Scales down about 20% on phones, per DESIGN.md */
+  --text-headline-xl: clamp(2.25rem, 1.5rem + 3vw, 3rem);
   --text-headline-xl--line-height: 1.1;
   --text-headline-xl--letter-spacing: -0.02em;
   --text-headline-xl--font-weight: 800;
 
-  --text-mono-label: 13px;
+  --text-mono-label: 0.8125rem;
   --text-mono-label--line-height: 1;
   --text-mono-label--font-weight: 500;
-  --font-mono-label: 'JetBrains Mono', monospace;
+  --font-mono-label: var(--font-jetbrains), ui-monospace, monospace;
+}
+
+/* Tighter side gutters on phones, per DESIGN.md */
+@media (max-width: 639px) {
+  :root {
+    --spacing-gutter: 16px;
+  }
 }
 
 /* Base */
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-sans);
   background-color: var(--color-background);
   color: var(--color-on-background);
   -webkit-font-smoothing: antialiased;
@@ -151,7 +158,23 @@ body {
   70%  { transform: scale(1);    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
   100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
 }
-.whatsapp-pulse { animation: pulse-ring 2s infinite; }
+.whatsapp-pulse { animation: pulse-ring 2s 3; }
+
+/* Reduced motion: keep feedback, drop movement */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .motion-scale:hover,
+  .group:hover .motion-scale {
+    transform: none !important;
+  }
+}
 
 /* Responsive max-width container utility */
 .container-page {

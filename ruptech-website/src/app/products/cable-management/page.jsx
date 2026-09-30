@@ -2,13 +2,17 @@ import { MessageCircle } from 'lucide-react';
 import Image from 'next/image';
 import SpecTable from '@/components/SpecTable';
 import { cableTrays } from '@/lib/productData';
-import { BUSINESS } from '@/lib/constants';
+import { whatsappLink } from '@/lib/constants';
+import CTAButton from '@/components/CTAButton';
+import { pageMeta } from '@/lib/seo';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
-export const metadata = {
+export const metadata = pageMeta({
   title: 'Cable Management Systems',
   description:
     'Ruptech Engineers\' range of G.I. perforated cable trays with cover — 14 standard sizes from 50W×25H to 400W×75H mm, 2500mm standard length. Custom sizes available.',
-};
+  path: '/products/cable-management',
+});
 
 const specCols = [
   { key: 'code', label: 'Product Code', className: 'text-primary font-bold' },
@@ -18,10 +22,17 @@ const specCols = [
 ];
 
 export default function CableManagementPage() {
-  const waUrl = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent('Hello! I am interested in Cable Trays / Cable Management. Please share details.')}`;
+  const waUrl = whatsappLink('Hello! I am interested in Cable Trays / Cable Management. Please share details.');
 
   return (
     <>
+      <Breadcrumbs
+        items={[
+          { label: 'Products', href: '/products' },
+          { label: 'Cable Management', href: '/products/cable-management' },
+        ]}
+      />
+
       <header className="bg-surface-container-lowest py-xl border-b border-outline-variant">
         <div className="max-w-container-max mx-auto px-gutter">
           <h1 className="font-headline-xl text-headline-xl text-primary mb-sm">Cable Management Systems</h1>
@@ -33,7 +44,7 @@ export default function CableManagementPage() {
         </div>
       </header>
 
-      <main className="max-w-container-max mx-auto px-gutter py-xl">
+      <div className="max-w-container-max mx-auto px-gutter py-xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-lg">
           <div className="lg:col-span-8">
             <h2 className="font-headline-md text-headline-md text-on-surface mb-md">
@@ -56,13 +67,13 @@ export default function CableManagementPage() {
           <div className="lg:col-span-4 space-y-md">
             <div className="p-md bg-surface-container-low border border-outline-variant rounded-lg">
               <h3 className="font-headline-sm text-headline-sm text-on-surface mb-sm">Product Photo</h3>
-              <div className="aspect-video relative rounded border border-outline-variant overflow-hidden bg-surface-container group">
+              <div className="aspect-[4/5] relative rounded border border-outline-variant overflow-hidden bg-surface-container group">
                 <Image
                   src="/images/products/cable-trays/cable_tray_0.webp"
-                  alt="G.I. Cable Tray with Cover"
+                  alt="Stack of G.I. perforated cable trays"
                   fill
                   sizes="(max-width: 768px) 100vw, 400px"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover motion-scale group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
               </div>
@@ -92,19 +103,24 @@ export default function CableManagementPage() {
               <p className="font-body-sm text-body-sm text-on-surface-variant mb-md">
                 We manufacture cable trays in any width, height, and length to your project requirements.
               </p>
-              <a
-                href={waUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                id="cable-whatsapp-btn"
-                className="w-full flex justify-center items-center gap-sm font-label-caps text-label-caps px-md py-sm bg-primary-container text-on-primary hover:bg-[#0c6b5c] rounded transition-colors"
-              >
-                <MessageCircle size={18} /> Request Quote
-              </a>
+              <div className="flex flex-col gap-sm">
+                <CTAButton href="/quote" className="w-full">Request a Quote</CTAButton>
+                {waUrl && (
+                  <a
+                    href={waUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    id="cable-whatsapp-btn"
+                    className="w-full flex justify-center items-center gap-sm font-label-caps text-label-caps px-md py-sm bg-[#25D366] text-white hover:bg-[#1ebe5e] rounded transition-colors"
+                  >
+                    <MessageCircle size={18} /> WhatsApp Us
+                  </a>
+                )}
+              </div>
             </div>
           </div>
         </div>
-      </main>
+      </div>
     </>
   );
 }

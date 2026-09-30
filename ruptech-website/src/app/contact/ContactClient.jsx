@@ -1,14 +1,14 @@
 'use client';
 import { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, CheckCircle, Loader2, MessageCircle } from 'lucide-react';
-import { BUSINESS } from '@/lib/constants';
+import { BUSINESS, whatsappLink, phoneLink } from '@/lib/constants';
 
 export default function ContactPageClient() {
   const [form, setForm] = useState({ name: '', phone: '', email: '', interest: '', message: '', hp: '' });
   const [status, setStatus] = useState('idle'); // idle | submitting | success | error
   const [error, setError] = useState('');
 
-  const waUrl = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent('Hello! I have an enquiry about your products.')}`;
+  const waUrl = whatsappLink('Hello! I have an enquiry about your products.');
 
   const handleChange = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
@@ -23,7 +23,8 @@ export default function ContactPageClient() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       });
-      if (!res.ok) throw new Error((await res.json()).error || 'Submission failed');
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || 'Submission failed. Please email us directly.');
       setStatus('success');
     } catch (err) {
       setStatus('error');
@@ -31,7 +32,7 @@ export default function ContactPageClient() {
     }
   };
 
-  const inputCls = 'w-full bg-surface border border-outline-variant rounded px-sm py-sm focus:border-primary focus:ring-1 focus:ring-primary font-body-md text-body-md text-on-surface outline-none transition-colors';
+  const inputCls = 'w-full bg-surface border border-outline-variant rounded px-sm py-sm focus:border-primary focus:ring-1 focus:ring-primary user-invalid:border-error user-invalid:ring-1 user-invalid:ring-error font-body-md text-body-md text-on-surface outline-none transition-colors';
   const labelCls = 'block font-label-caps text-label-caps text-on-surface-variant mb-xs uppercase';
 
   return (
@@ -66,7 +67,7 @@ export default function ContactPageClient() {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-md">
                   {/* Honeypot */}
-                  <input type="text" name="hp" value={form.hp} onChange={handleChange} className="hidden" tabIndex={-1} autoComplete="off" />
+                  <input type="text" name="hp" value={form.hp} onChange={handleChange} className="absolute -left-[9999px] w-px h-px opacity-0" tabIndex={-1} autoComplete="off" aria-hidden="true" />
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
                     <div>
@@ -75,7 +76,7 @@ export default function ContactPageClient() {
                     </div>
                     <div>
                       <label htmlFor="phone" className={labelCls}>Phone Number *</label>
-                      <input id="phone" name="phone" type="tel" required value={form.phone} onChange={handleChange} placeholder="+91 98765 43210" className={inputCls} />
+                      <input id="phone" name="phone" type="tel" required pattern="[0-9+ \(\)\-]{7,20}" title="Digits, spaces, +, - and brackets only (7 to 20 characters)" value={form.phone} onChange={handleChange} placeholder="+91 98765 43210" className={inputCls} />
                     </div>
                   </div>
 
@@ -140,10 +141,12 @@ export default function ContactPageClient() {
 
             <div className="bg-surface-container-lowest border border-outline-variant rounded-lg p-md">
               <div className="flex flex-col gap-sm">
-                <a href={`tel:${BUSINESS.phone}`} className="flex items-center gap-sm hover:text-primary transition-colors">
-                  <Phone size={20} className="text-primary" />
-                  <span className="font-mono-label text-mono-label text-on-surface-variant">{BUSINESS.phone}</span>
-                </a>
+                {phoneLink && (
+                  <a href={phoneLink} className="flex items-center gap-sm hover:text-primary transition-colors">
+                    <Phone size={20} className="text-primary" />
+                    <span className="font-mono-label text-mono-label text-on-surface-variant">{BUSINESS.phone}</span>
+                  </a>
+                )}
                 <a href={`mailto:${BUSINESS.email}`} className="flex items-center gap-sm hover:text-primary transition-colors">
                   <Mail size={20} className="text-primary" />
                   <span className="font-mono-label text-mono-label text-on-surface-variant">{BUSINESS.email}</span>
@@ -155,27 +158,31 @@ export default function ContactPageClient() {
               </div>
             </div>
 
-            <a href={waUrl} target="_blank" rel="noopener noreferrer" id="contact-whatsapp-btn"
-              className="flex items-center gap-sm p-sm rounded bg-surface hover:bg-surface-container transition-colors border border-outline-variant group">
-              <div className="w-10 h-10 rounded-full bg-[#25D366] text-white flex items-center justify-center shrink-0">
-                <MessageCircle size={20} />
-              </div>
-              <div>
-                <p className="font-label-caps text-label-caps text-on-surface-variant">WhatsApp</p>
-                <p className="font-body-md text-body-md text-on-surface font-semibold">Message Us Directly</p>
-              </div>
-            </a>
+            {waUrl && (
+              <a href={waUrl} target="_blank" rel="noopener noreferrer" id="contact-whatsapp-btn"
+                className="flex items-center gap-sm p-sm rounded bg-surface hover:bg-surface-container transition-colors border border-outline-variant group">
+                <div className="w-10 h-10 rounded-full bg-[#25D366] text-white flex items-center justify-center shrink-0">
+                  <MessageCircle size={20} />
+                </div>
+                <div>
+                  <p className="font-label-caps text-label-caps text-on-surface-variant">WhatsApp</p>
+                  <p className="font-body-md text-body-md text-on-surface font-semibold">Message Us Directly</p>
+                </div>
+              </a>
+            )}
           </div>
         </div>
       </section>
 
-      {/* Map placeholder */}
-      <section className="border-t border-outline-variant h-72 w-full relative bg-surface-container-high flex items-center justify-center">
-        <div className="text-center text-outline opacity-50">
-          <MapPin size={48} className="mx-auto mb-2" />
-          <p className="font-label-caps text-label-caps">MIDC Ahmednagar, Maharashtra, India</p>
-          <p className="font-body-sm text-body-sm mt-1">Google Maps embed — add iframe with API key</p>
-        </div>
+      {/* Map */}
+      <section className="border-t border-outline-variant h-80 w-full bg-surface-container-high">
+        <iframe
+          title="Ruptech Engineers location, MIDC Ahmednagar"
+          src="https://maps.google.com/maps?q=MIDC%20Ahmednagar%20Maharashtra%20414111&z=14&output=embed"
+          className="w-full h-full border-0"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
       </section>
     </>
   );

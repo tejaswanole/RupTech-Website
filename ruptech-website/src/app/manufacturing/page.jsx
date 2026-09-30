@@ -1,12 +1,15 @@
 import { Factory } from 'lucide-react';
 import CTAButton from '@/components/CTAButton';
-import { machines, processSteps } from '@/lib/productData';
+import Image from 'next/image';
+import { machines, finishingLine, processSteps } from '@/lib/productData';
+import { pageMeta } from '@/lib/seo';
 
-export const metadata = {
+export const metadata = pageMeta({
   title: 'Manufacturing Infrastructure',
   description:
     'Explore Ruptech Engineers\' state-of-the-art manufacturing facility in MIDC Ahmednagar — CNC laser cutting, press brake bending, MIG/TIG welding, and powder coating.',
-};
+  path: '/manufacturing',
+});
 
 const facilitySections = [
   {
@@ -28,6 +31,33 @@ const categoryColors = {
   Welding: 'bg-tertiary-container text-on-tertiary-container',
   Finishing: 'bg-surface-container-high text-on-surface',
 };
+
+function MachineCard({ machine }) {
+  return (
+    <article className="group flex flex-col overflow-hidden rounded-lg border border-outline-variant bg-surface-container-lowest hover:border-primary transition-colors">
+      <div className="relative aspect-[4/3] bg-white border-b border-outline-variant">
+        <Image
+          src={machine.image}
+          alt={machine.name}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-contain p-sm"
+        />
+      </div>
+      <div className="p-md flex flex-col gap-xs flex-grow">
+        <span
+          className={`self-start px-xs py-1 font-label-caps text-label-caps rounded ${
+            categoryColors[machine.category] || 'bg-surface-variant text-on-surface-variant'
+          }`}
+        >
+          {machine.category}
+        </span>
+        <h3 className="font-headline-sm text-headline-sm text-on-surface">{machine.name}</h3>
+        <p className="font-body-sm text-body-sm text-on-surface-variant">{machine.description}</p>
+      </div>
+    </article>
+  );
+}
 
 export default function ManufacturingPage() {
   return (
@@ -74,7 +104,7 @@ export default function ManufacturingPage() {
               className="w-full h-full"
               style={{
                 backgroundImage:
-                  "url('https://images.unsplash.com/photo-1565043666747-69f6646db940?w=800&q=80')",
+                  "url('/images/facility/turret-punch.webp')",
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}
@@ -91,46 +121,21 @@ export default function ManufacturingPage() {
             Precision equipment powering our engineering excellence.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-md">
-          {machines.map((machine, i) => (
-            <div
-              key={machine.name}
-              className={`group relative overflow-hidden rounded border border-outline-variant bg-surface ${
-                i === 0 ? 'md:col-span-2' : ''
-              } h-[280px] flex flex-col justify-end p-md hover:border-primary transition-colors`}
-              style={{
-                backgroundImage: `url('https://images.unsplash.com/photo-${
-                  i === 0
-                    ? '1504917595217-d4dc5ebe6122'
-                    : i === 1
-                    ? '1581091226825-a6a2a5aee158'
-                    : i === 2
-                    ? '1565043666747-69f6646db940'
-                    : i === 3
-                    ? '1504328345606-18bbc8c9d7d1'
-                    : '1581091226825-a6a2a5aee158'
-                }?w=800&q=70')`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-              <div className="relative z-10">
-                <span
-                  className={`inline-block px-xs py-1 font-label-caps text-label-caps rounded mb-xs ${
-                    categoryColors[machine.category] || 'bg-surface-variant text-on-surface-variant'
-                  }`}
-                >
-                  {machine.category}
-                </span>
-                <h3 className={`${i === 0 ? 'font-headline-md text-headline-md' : 'font-headline-sm text-headline-sm'} text-white`}>
-                  {machine.name}
-                </h3>
-                <p className="font-body-sm text-body-sm text-surface-container-high mt-xs max-w-md">
-                  {machine.description}
-                </p>
-              </div>
-            </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-md">
+          {machines.map((machine) => (
+            <MachineCard key={machine.name} machine={machine} />
+          ))}
+        </div>
+
+        <div className="mt-xl mb-lg text-center md:text-left">
+          <h2 className="font-headline-lg text-headline-lg text-on-background mb-xs">Welding &amp; Finishing Line</h2>
+          <p className="font-body-md text-body-md text-on-surface-variant">
+            From welded assembly to a cured powder-coated finish, under one roof.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-md">
+          {finishingLine.map((machine) => (
+            <MachineCard key={machine.name} machine={machine} />
           ))}
         </div>
       </section>

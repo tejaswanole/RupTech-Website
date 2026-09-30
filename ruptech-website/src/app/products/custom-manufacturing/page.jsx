@@ -1,11 +1,14 @@
 import CTAButton from '@/components/CTAButton';
 import { ArrowRight, CheckCircle } from 'lucide-react';
+import { pageMeta } from '@/lib/seo';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
-export const metadata = {
+export const metadata = pageMeta({
   title: 'Custom Manufacturing & OEM/ODM',
   description:
     'Bespoke sheet metal fabrication and OEM/ODM manufacturing services from Ruptech Engineers — from design feasibility to batch production and dispatch.',
-};
+  path: '/products/custom-manufacturing',
+});
 
 const capabilities = [
   'Sheet metal enclosures to customer drawings (DXF / DWG / PDF)',
@@ -33,6 +36,13 @@ const oemSteps = [
 export default function CustomManufacturingPage() {
   return (
     <>
+      <Breadcrumbs
+        items={[
+          { label: 'Products', href: '/products' },
+          { label: 'Custom Manufacturing', href: '/products/custom-manufacturing' },
+        ]}
+      />
+
       <header className="bg-surface-container-lowest py-xl border-b border-outline-variant">
         <div className="max-w-container-max mx-auto px-gutter">
           <h1 className="font-headline-xl text-headline-xl text-primary mb-sm">Custom Manufacturing & OEM/ODM</h1>
@@ -43,7 +53,7 @@ export default function CustomManufacturingPage() {
         </div>
       </header>
 
-      <main className="max-w-container-max mx-auto px-gutter py-xl space-y-xl">
+      <div className="max-w-container-max mx-auto px-gutter py-xl space-y-xl">
         {/* Capabilities */}
         <section>
           <h2 className="font-headline-lg text-headline-lg text-on-surface mb-md">What We Can Build For You</h2>
@@ -83,12 +93,12 @@ export default function CustomManufacturingPage() {
           <h3 className="font-headline-md text-headline-md text-inverse-on-surface mb-sm">
             Ready to Start Your OEM Project?
           </h3>
-          <p className="font-body-md text-body-md text-surface-variant mb-lg max-w-xl mx-auto">
+          <p className="font-body-md text-body-md text-surface-variant mb-lg max-w-2xl mx-auto">
             Upload your drawings and receive a detailed quotation within 24 hours. All files handled under strict NDA.
           </p>
           <CTAButton href="/quote" size="lg">Submit an RFQ Now</CTAButton>
         </section>
-      </main>
+      </div>
     </>
   );
 }

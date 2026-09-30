@@ -1,12 +1,15 @@
 import CTAButton from '@/components/CTAButton';
 import { MessageCircle, Scissors, CircleDot, ArrowUpDown, Ruler, GitMerge, PaintBucket, CheckCircle } from 'lucide-react';
-import { BUSINESS } from '@/lib/constants';
+import { whatsappLink } from '@/lib/constants';
+import { pageMeta } from '@/lib/seo';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
-export const metadata = {
+export const metadata = pageMeta({
   title: 'Sheet Metal Fabrication Services',
   description:
     'Precision sheet metal fabrication services — CNC laser cutting, turret punching, press brake bending, MIG/TIG welding, and powder coating from Ruptech Engineers, Ahmednagar.',
-};
+  path: '/products/sheet-metal-fabrication',
+});
 
 const fabricationServices = [
   {
@@ -50,10 +53,17 @@ const finishingOptions = [
 ];
 
 export default function SheetMetalFabricationPage() {
-  const waUrl = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent('Hello! I need Sheet Metal Fabrication services. Please share details.')}`;
+  const waUrl = whatsappLink('Hello! I need Sheet Metal Fabrication services. Please share details.');
 
   return (
     <>
+      <Breadcrumbs
+        items={[
+          { label: 'Products', href: '/products' },
+          { label: 'Sheet Metal Fabrication', href: '/products/sheet-metal-fabrication' },
+        ]}
+      />
+
       {/* Header */}
       <header className="bg-surface-container-lowest py-xl border-b border-outline-variant">
         <div className="max-w-container-max mx-auto px-gutter">
@@ -65,7 +75,7 @@ export default function SheetMetalFabricationPage() {
         </div>
       </header>
 
-      <main className="max-w-container-max mx-auto px-gutter py-xl space-y-xl">
+      <div className="max-w-container-max mx-auto px-gutter py-xl space-y-xl">
 
         {/* ── Capabilities Grid ── */}
         <section>
@@ -131,20 +141,22 @@ export default function SheetMetalFabricationPage() {
           </div>
           <div className="flex gap-sm flex-wrap shrink-0">
             <CTAButton href="/quote" variant="primary">Request a Quote</CTAButton>
-            <a
-              href={waUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              id="fabrication-whatsapp-btn"
-              className="bg-[#25D366] text-white font-label-caps text-label-caps px-md py-sm rounded
-                         hover:bg-[#1ebe5e] transition-colors flex items-center gap-2"
-            >
-              <MessageCircle size={16} /> WhatsApp Us
-            </a>
+            {waUrl && (
+              <a
+                href={waUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                id="fabrication-whatsapp-btn"
+                className="bg-[#25D366] text-white font-label-caps text-label-caps px-md py-sm rounded
+                           hover:bg-[#1ebe5e] transition-colors flex items-center gap-2"
+              >
+                <MessageCircle size={16} /> WhatsApp Us
+              </a>
+            )}
           </div>
         </section>
 
-      </main>
+      </div>
     </>
   );
 }

@@ -1,15 +1,18 @@
 import SpecTable from '@/components/SpecTable';
 import CTAButton from '@/components/CTAButton';
 import { storageRacks } from '@/lib/productData';
-import { BUSINESS } from '@/lib/constants';
-import { MessageCircle, AlertTriangle, ImageOff } from 'lucide-react';
+import { whatsappLink } from '@/lib/constants';
+import { MessageCircle } from 'lucide-react';
 import Image from 'next/image';
+import { pageMeta } from '@/lib/seo';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
-export const metadata = {
+export const metadata = pageMeta({
   title: 'Industrial Storage Solutions',
   description:
     'Industrial storage racks manufactured by Ruptech Engineers — Single Slotted Angle Rack, Super Shop/Mall Rack, and Hardware Rack. Mild Steel, customized sizes available.',
-};
+  path: '/products/industrial-storage',
+});
 
 const specCols = [
   { key: 'code', label: 'Code', className: 'text-primary font-bold' },
@@ -20,10 +23,17 @@ const specCols = [
 ];
 
 export default function IndustrialStoragePage() {
-  const waUrl = `https://wa.me/${BUSINESS.whatsapp}?text=${encodeURIComponent('Hello! I am interested in Industrial Storage Racks. Please share details and pricing.')}`;
+  const waUrl = whatsappLink('Hello! I am interested in Industrial Storage Racks. Please share details and pricing.');
 
   return (
     <>
+      <Breadcrumbs
+        items={[
+          { label: 'Products', href: '/products' },
+          { label: 'Industrial Storage', href: '/products/industrial-storage' },
+        ]}
+      />
+
       <header className="bg-surface-container-lowest py-xl border-b border-outline-variant">
         <div className="max-w-container-max mx-auto px-gutter">
           <h1 className="font-headline-xl text-headline-xl text-primary mb-sm">Industrial Storage Racks</h1>
@@ -34,7 +44,7 @@ export default function IndustrialStoragePage() {
         </div>
       </header>
 
-      <main className="max-w-container-max mx-auto px-gutter py-xl space-y-lg">
+      <div className="max-w-container-max mx-auto px-gutter py-xl space-y-lg">
         {/* Spec Table */}
         <section>
           <h2 className="font-headline-md text-headline-md text-on-surface mb-md">Storage Rack Specifications</h2>
@@ -58,7 +68,7 @@ export default function IndustrialStoragePage() {
                   alt={item.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover motion-scale group-hover:scale-105 transition-transform duration-300"
                   loading="lazy"
                 />
               </div>
@@ -78,13 +88,15 @@ export default function IndustrialStoragePage() {
           </div>
           <div className="flex gap-sm">
             <CTAButton href="/quote">Get a Quote</CTAButton>
-            <a href={waUrl} target="_blank" rel="noopener noreferrer" id="storage-whatsapp-btn"
-              className="border border-outline text-on-surface-variant font-label-caps text-label-caps px-md py-sm rounded hover:border-primary hover:text-primary transition-colors flex items-center gap-2">
-              <MessageCircle size={16} /> WhatsApp
-            </a>
+            {waUrl && (
+              <a href={waUrl} target="_blank" rel="noopener noreferrer" id="storage-whatsapp-btn"
+                className="bg-[#25D366] text-white font-label-caps text-label-caps px-md py-sm rounded hover:bg-[#1ebe5e] transition-colors flex items-center gap-2">
+                <MessageCircle size={16} /> WhatsApp Us
+              </a>
+            )}
           </div>
         </section>
-      </main>
+      </div>
     </>
   );
 }

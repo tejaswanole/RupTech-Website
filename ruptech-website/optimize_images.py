@@ -7,7 +7,6 @@ under  public/images/products/  then run this script.
 What it does:
   • Converts every image to WebP (best compression + quality)
   • Resizes to max 1200px wide (keeps aspect ratio)
-  • Creates a thumbnail version at max 400px wide (suffix _thumb)
   • Strips EXIF metadata (privacy + size)
   • Prints before/after file sizes so you can see the savings
 
@@ -25,7 +24,6 @@ from PIL import Image, ExifTags
 SCRIPT_DIR   = Path(__file__).resolve().parent
 PUBLIC_DIR   = SCRIPT_DIR / "public" / "images"
 MAX_WIDTH    = 1200   # px — full-size product image
-THUMB_WIDTH  = 400    # px — thumbnail
 WEBP_QUALITY = 82     # 0-100 (82 is visually lossless for most product photos)
 
 SUPPORTED = {'.jpg', '.jpeg', '.png', '.bmp', '.tiff', '.tif', '.webp', '.heic'}
@@ -64,11 +62,6 @@ def resize(img, max_w):
 def convert_image(src: Path):
     orig_bytes = src.stat().st_size
     dest_full  = src.with_suffix('.webp')
-    dest_thumb = src.with_name(src.stem + '_thumb.webp')
-
-    # Skip already-converted thumbs
-    if src.stem.endswith('_thumb'):
-        return
 
     try:
         with Image.open(src) as img:
@@ -83,14 +76,10 @@ def convert_image(src: Path):
             full = resize(img.copy(), MAX_WIDTH)
             full.save(dest_full, 'WEBP', quality=WEBP_QUALITY, method=6)
 
-            # Thumbnail
-            thumb = resize(img.copy(), THUMB_WIDTH)
-            thumb.save(dest_thumb, 'WEBP', quality=WEBP_QUALITY, method=6)
-
         new_bytes = dest_full.stat().st_size
         saving = (1 - new_bytes / orig_bytes) * 100 if orig_bytes else 0
         print(f"  [OK]  {src.name}")
-        print(f"        {human(orig_bytes)} → {human(new_bytes)}  ({saving:.0f}% smaller)  | thumb: {dest_thumb.name}")
+        print(f"        {human(orig_bytes)} → {human(new_bytes)}  ({saving:.0f}% smaller)")
 
         # Remove original if it's not already a WebP
         if src.suffix.lower() != '.webp':
